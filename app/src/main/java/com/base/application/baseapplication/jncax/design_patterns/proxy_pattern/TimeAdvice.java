@@ -3,7 +3,7 @@ package com.base.application.baseapplication.jncax.design_patterns.proxy_pattern
 import com.base.application.baseapplication.jncax.design_patterns.prototype_pattern.Address;
 
 /**
- * Created by chenaxing on 2017/5/10.
+ * Created by JerryCaicos on 2017/5/10.
  */
 
 public class TimeAdvice implements Advice

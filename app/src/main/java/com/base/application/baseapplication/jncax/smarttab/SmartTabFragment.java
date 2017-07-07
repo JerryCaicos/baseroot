@@ -18,7 +18,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by chenaxing on 2016/12/20.
+ * Created by JerryCaicos on 2016/12/20.
  */
 
 public class SmartTabFragment extends Fragment

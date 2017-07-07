@@ -5,7 +5,7 @@ import java.lang.reflect.Method;
 import java.lang.reflect.Proxy;
 
 /**
- * Created by chenaxing on 2017/5/10.
+ * Created by JerryCaicos on 2017/5/10.
  */
 
 public class TimeProxy implements InvocationHandler

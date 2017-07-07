@@ -14,7 +14,7 @@ import com.google.android.gms.appindexing.AppIndex;
 import com.google.android.gms.common.api.GoogleApiClient;
 
 /**
- * Created by chenaxing on 2016/12/23.
+ * Created by JerryCaicos on 2016/12/23.
  */
 
 public class DrawerLayoutWithNestedSrcollViewActivity extends AppCompatActivity

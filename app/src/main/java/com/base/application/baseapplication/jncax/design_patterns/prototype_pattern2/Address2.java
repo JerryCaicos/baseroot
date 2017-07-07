@@ -1,7 +1,7 @@
 package com.base.application.baseapplication.jncax.design_patterns.prototype_pattern2;
 
 /**
- * Created by chenaxing on 2017/5/9.
+ * Created by JerryCaicos on 2017/5/9.
  */
 
 public class Address2 implements Cloneable

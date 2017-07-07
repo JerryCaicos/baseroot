@@ -8,7 +8,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * Created by chenaxing on 2017/5/9.
+ * Created by JerryCaicos on 2017/5/9.
  */
 
 public class ProtoTypeTest2

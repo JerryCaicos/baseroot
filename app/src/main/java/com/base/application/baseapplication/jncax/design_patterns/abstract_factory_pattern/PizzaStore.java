@@ -4,7 +4,7 @@ import com.base.application.baseapplication.jncax.design_patterns.abstract_facto
 import com.base.application.baseapplication.jncax.design_patterns.abstract_factory_pattern.model.Pizza;
 
 /**
- * Created by chenaxing on 2017/5/8.
+ * Created by JerryCaicos on 2017/5/8.
  */
 
 public class PizzaStore

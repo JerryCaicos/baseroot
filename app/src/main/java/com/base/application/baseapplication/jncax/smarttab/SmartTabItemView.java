@@ -12,7 +12,7 @@ import android.widget.TextView;
 import com.base.application.baseapplication.R;
 
 /**
- * Created by chenaxing on 2016/12/20.
+ * Created by JerryCaicos on 2016/12/20.
  */
 
 public class SmartTabItemView extends LinearLayout

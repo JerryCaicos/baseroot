@@ -6,7 +6,7 @@ import rx.Observable;
 import rx.Subscriber;
 
 /**
- * Created by chenaxing on 2017/5/4.
+ * Created by JerryCaicos on 2017/5/4.
  */
 
 public class MyTest

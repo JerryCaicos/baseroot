@@ -16,7 +16,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by chenaxing on 2016/12/21.
+ * Created by JerryCaicos on 2016/12/21.
  */
 
 public class RecyclerViewFragment extends Fragment

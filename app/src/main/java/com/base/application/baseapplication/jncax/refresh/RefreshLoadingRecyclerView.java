@@ -4,7 +4,7 @@ import android.content.Context;
 import android.widget.FrameLayout;
 
 /**
- * Created by chenaxing on 2016/12/27.
+ * Created by JerryCaicos on 2016/12/27.
  */
 
 public class RefreshLoadingRecyclerView extends FrameLayout

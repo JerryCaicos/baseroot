@@ -119,6 +119,7 @@ public class MainActivity extends BasicActivity implements View.OnClickListener
         {
             if(task.getId() == 1000)
             {
+                hideLoadingView();
                 String jsonObject = (String) result.getData();
                 ToastUtils.showMessage(jsonObject);
             }
@@ -204,7 +205,7 @@ public class MainActivity extends BasicActivity implements View.OnClickListener
                 disposeNestedClickListener();
                 break;
         }
-        testNetWork();
+//        testNetWork();
     }
 
     private void dispose3D2AnimationClickListener()

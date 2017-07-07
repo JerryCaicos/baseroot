@@ -16,7 +16,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by chenaxing on 2016/12/22.
+ * Created by JerryCaicos on 2016/12/22.
  */
 
 public class ScrollViewPagerActivity extends AppCompatActivity
