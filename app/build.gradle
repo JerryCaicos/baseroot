@@ -1,0 +1,60 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 23
+    buildToolsVersion '25.0.0'
+    useLibrary 'org.apache.http.legacy'
+    defaultConfig {
+        applicationId "com.base.application.baseapplication"
+        minSdkVersion 14
+        targetSdkVersion 22
+        versionCode 1
+        versionName "1.0"
+        multiDexEnabled true
+    }
+    buildTypes {
+//        debug {
+//            minifyEnabled false
+//            proguardFile 'proguard.cfg'
+//            signingConfig signingConfigs.config
+//            //Zipalign优化
+//            zipAlignEnabled true
+//            // 移除无用的resource文件
+////            shrinkResources true
+////            manifestPlaceholders = [ENV_SERVICE: "prd"]
+//
+//        }
+//        release {
+//            minifyEnabled true
+//            proguardFile 'proguard.cfg'
+//            signingConfig signingConfigs.config
+//            //Zipalign优化
+//            zipAlignEnabled true
+//            // 移除无用的resource文件
+//            //shrinkResources true
+//        }
+    }
+    dexOptions {
+        javaMaxHeapSize '2g'
+        jumboMode = true
+//        incremental true
+    }
+
+    lintOptions {
+        abortOnError false
+        disable 'ContentDescription'
+//        xmlReport true
+//        check 'NewApi', 'InlinedApi'
+    }
+}
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    compile 'com.android.support:support-v4:23.2.1'
+    compile 'com.android.support:recyclerview-v7:23.2.1'
+    compile 'com.android.support:design:23.2.1'
+    compile 'com.google.android.gms:play-services-appindexing:8.4.0'
+
+    compile 'io.reactivex:rxjava:1.0.14'
+    compile 'io.reactivex:rxandroid:1.0.1'
+}

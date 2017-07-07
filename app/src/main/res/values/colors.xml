@@ -1,0 +1,522 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+
+    <color name="search_price_color">#dd0000</color>
+    <!-- pub colors start -->
+    <!-- 白色 -->
+    <color name="pub_color_one">#ffffffff</color>
+    <!-- 黑色 -->
+    <color name="pub_color_two">#ff000000</color>
+    <!-- 标题栏字体颜色 -->
+    <color name="pub_color_three">#ff313131</color>
+    <!-- 橘色 促销文字、运费、重要信息备注、文字选中状态的字符颜色 -->
+    <color name="pub_color_four">#fffc7c26</color>
+    <!-- 绿色文字色值 -->
+    <color name="pub_color_five">#ff009944</color>
+    <!-- 分割线颜色 -->
+    <color name="pub_color_six">#ffdcdcdc</color>
+    <!-- 橙红色 所有价格颜色 -->
+    <color name="pub_color_seven">#ffff4800</color>
+    <!-- 黑色 如商品名称 -->
+    <color name="pub_color_eight">#313131</color>
+    <!-- 深灰色 如数量、打分 -->
+    <color name="pub_color_nine">#ff707070</color>
+    <!-- 浅灰色 如输入框提示 -->
+    <color name="pub_color_ten">#ffcacaca</color>
+    <!-- 次灰色  如输入框提示 -->
+    <color name="grey_secound">#ffa2a2a2</color>
+    <!-- 标题栏背景色 -->
+    <color name="pub_color_eleven">#fff7f7f8</color>
+    <!-- 内容区的背景色 -->
+    <color name="pub_color_twelev">#fff2f2f2</color>
+    <color name="pub_color_thirteen">#ca631e</color>
+    <!-- 蓝色  标题栏的背景色 -->
+    <color name="pub_color_fourteen">#fff8f8f8</color>
+    <!-- 橙黄色 新版VI字体颜色值 -->
+    <color name="pub_color_twenty_one">#f29400</color>
+    <color name="pub_title_text_colour">#353d4d</color>
+    <!-- 名品特卖 -->
+    <color name="pub_title_text_mp_colour">#fc2f4d</color>
+    <color name="public_color_search_price">#e52e06</color>
+    <!-- 黑色 -->
+    <color name="pub_color_fifteen">#353d44</color>
+    <color name="pub_color_sixteen">#eaeaea</color>
+    <color name="pub_color_seveneen">#e21d1d</color>
+    <color name="pub_color_eighteen">#909090</color>
+    <color name="pub_color_twenty">#2e8fdd</color>
+    <!-- pub colors end -->
+    <color name="shoppingcart_button_finish">#ff4a00</color>
+    <color name="home_bg">#fff5f5f5</color>
+    <color name="comment_progress">#799DB9</color>
+    <color name="white">#ffffffff</color>
+    <color name="black">#ff000000</color>
+    <color name="black_30">#4C000000</color>
+    <color name="hotel_text">#B8B8B8</color>
+    <color name="darkgray">#ff938192</color>
+    <color name="Silver">#ffcccccc</color>
+    <color name="Silver11">#ff999999</color>
+    <color name="lightgreen">#ff7cd12e</color>
+    <color name="shen_black">#ff000033</color>
+    <color name="zise">#ff660066</color>
+    <color name="blue">#ff009999</color>
+    <color name="silver_blue">#ff0066cc</color>
+    <color name="yellow">#ffffff00</color>
+    <color name="dark_yellow">#ffffdd00</color>
+    <color name="red">#ffff0033</color>
+    <color name="detail_blue">#ff003399</color>
+    <color name="detail_red">#ffce0a0a</color>
+    <color name="detail_gray">#ff878787</color>
+    <color name="orange">#ffff8000</color>
+    <color name="dark_blue">#ff0e3d9e</color>
+    <color name="item_light">#ffF5F5F5</color>
+    <color name="item_dark">#ffE6E6E6</color>
+    <color name="item_selected">#ffD4EAFF</color>
+    <color name="item_selected2">#797770</color>
+    <color name="item_divider">#FFD3D3D3</color>
+    <color name="item_divider_category">#FFB1B1B1</color>
+    <color name="item_gray">#FFF0F0F0</color>
+    <color name="background_gray">#FFE8E8E8</color>
+    <color name="title">#FFf6d56a</color>
+    <color name="item_cart">#EFF0F0</color>
+    <color name="item_my_ebuy">#c9c9c9</color>
+    <color name="no_transparent_white">#ffffff</color>
+    <color name="hotdarkgray">#111111</color>
+    <color name="hothalftransparent">#999D9D9D</color>
+    <color name="adredhalftransparent">#60FACFCC</color>
+    <color name="graycolor">#838282</color>
+    <color name="bg_webview">#E8E7E1</color>
+    <color name="sound_circle_color">#ee7100</color>
+    <color name="bg_adv_model">#F5F5F5</color>
+    <color name="bg_main">#F2EEE0</color>
+    <color name="bg_search_filter">#E7E1CE</color>
+    <color name="bg_search_order">#FBF8F0</color>
+    <color name="bg_category_wap">#F86F00</color>
+    <color name="search_tap_text_selected">#FC7C26</color>
+    <color name="search_tap_text_normal">#7B7B7B</color>
+    <color name="activity_transparent">#01000000</color>
+    <color name="init_bgcolor">#fff5da</color>
+
+    <drawable name="bg_home_imagepress">#883f3f3f</drawable>
+    <drawable name="bg_home_imagenormal">#0000</drawable>
+    <drawable name="translucent_background">#55000000</drawable>
+    <drawable name="translucent_background2">#00000000</drawable>
+    <drawable name="pub_twelev_background">#fff2f2f2</drawable>
+
+    <!-- 订单中心 -->
+    <color name="order_shop_bg">#fcfcfc</color>
+    <color name="order_item_pay_bg">#e21d1d</color>
+
+    <!-- 商品详情 -->
+    <color name="good_detail_text_gray">#FF666666</color>
+    <color name="good_detail_divider_gray">#FF999999</color>
+    <color name="good_detail_goto_detail">#BBEEEEEE</color>
+    <color name="gold">#DAA520</color>
+    <color name="gold_gray">#b2b2b2</color>
+
+    <!-- 条码扫描 -->
+    <color name="transparent">#0000</color>
+    <color name="result_view">#b0000000</color>
+    <color name="viewfinder_mask">#60000000</color>
+    <color name="viewfinder_frame">#ff000000</color>
+    <color name="possible_result_points">#c0ffff00</color>
+    <color name="viewfinder_laser">#ffff0000</color>
+    <color name="result_points">#c000ff00</color>
+    <color name="hyaline">#00000000</color>
+    <color name="nick_name">#F7F7F7</color>
+    <color name="bg_top">#ed5f5e</color>
+    <color name="bg_bottom">#242424</color>
+    <color name="bg_body">#cccccc</color>
+
+    <!-- 筛选 -->
+    <color name="textColor">#FFFFFF</color>
+    <color name="bgColor">#000000</color>
+    <color name="border_line">#ffd7dadc</color>
+    <color name="gray">#ffc8c8c8</color>
+    <color name="mywhite">#00ffffff</color>
+    <color name="font_color">#959595</color>
+    <color name="category_bg">#ececec</color>
+    <color name="select_bg">#00ffffff</color>
+    <color name="progress_bg">#B4FFFFFF</color>
+
+    <!-- 更多 -->
+
+    <color name="goods_name_color">#8B7E66</color>
+
+    <!-- 附近苏宁 -->
+    <color name="storenamecolor">#9e8852</color>
+    <color name="storelinecolor">#60676D</color>
+    <color name="storedetailcolor">#666666</color>
+
+    <!-- 应用中心 -->
+    <color name="tab_text_tip">#374E77</color>
+    <color name="comment_user_name">#8D919D</color>
+    <color name="comment_tip">#454545</color>
+    <color name="gray_1">#ff646a79</color>
+    <color name="white_rice">#fff1f5f7</color>
+    <color name="base_bg_Color">#FFF1F5F7</color>
+    <color name="software_detail_tv">#5C6068</color>
+    <color name="gray_2">#ff3e3e3e</color>
+    <color name="gray_3">#ff4c5059</color>
+    <color name="font_blue">#324f85</color>
+    <color name="font_white">#fffefe</color>
+    <color name="font_orange">#ff6611</color>
+
+    <!-- 彩票 -->
+    <color name="link_blue">#1998ED</color>
+    <color name="text_ordercheck_white">#ffffff</color>
+    <color name="text_ordercheck_black">#000000</color>
+    <color name="text_gray">#6c6e70</color>
+    <color name="text_black">#191919</color>
+    <color name="dialog_button">#e40e03</color>
+
+    <!-- 开奖公告 -->
+    <color name="red_ball">#DB192B</color>
+    <color name="blue_ball">#05489E</color>
+
+    <!-- 抢购 -->
+    <color name="group_font_1">#c20101</color>
+    <color name="group_font_2">#666666</color>
+    <color name="group_font_3">#999999</color>
+    <color name="group_font_4">#CD3B00</color>
+    <color name="group_font_5">#98834A</color>
+    <color name="group_font_6">#FFD5D5D5</color>
+    <color name="group_font_7">#FF825201</color>
+    <color name="group_font_8">#BB7700</color>
+    <color name="group_font_9">#7D7D7D</color>
+    <color name="green_color">#EF6B00</color>
+    <color name="gray_yellow">#C58D36</color>
+    <color name="light_gray_yellow">#F2EEE0</color>
+    <color name="light_yellow_gray">#E7D9C2</color>
+    <color name="title_text_color">#776D61</color>
+    <color name="hotel_list_item_color">#FFFFFF</color>
+    <color name="hotel_list_text_color">#Fc7C26</color>
+
+    <!-- 签到 -->
+    <color name="translucent">#9000</color>
+    <color name="tempColor">#858585</color>
+    <color name="ToDayText">#ffc2a53d</color>
+    <color name="Text">#603b07</color>
+    <color name="noMonth">#c0c0c0</color>
+    <color name="rulecolor">#ca9662</color>
+    <color name="rulepoint">#7b7873</color>
+    <color name="countdays">#0080E3</color>
+    <color name="normal">#f2f2f2</color>
+    <color name="norhistory">#c9c9c9</color>
+    <color name="acthistory">#fea419</color>
+    <color name="istoday">#1980e5</color>
+    <color name="couponcolor">#999999</color>
+
+    <!-- 我的易购 -->
+    <color name="evaluate_goodsName_color">#9c8851</color>
+    <color name="seller_service">#666667</color>
+    <color name="act_myebuy_btn_redpackage">#f6ab00</color>
+
+    <!-- 资讯公告 -->
+    <color name="notice_txt">#898989</color>
+    <color name="notice_multi_title">#333333</color>
+    <color name="green_yellow">#b9a057</color>
+
+    <!-- 标注的字体颜色值 -->
+    <color name="public_text_color">#444444</color>
+    <color name="title_text_another_color">#776D61</color>
+    <color name="text_color_red">#FF0000</color>
+    <color name="text_color_orange">#825201</color>
+    <color name="text_color_content">#999081</color>
+    <color name="evaluate_select_color">#df4f00</color>
+    <color name="evaluate_no_select_color">#666666</color>
+    <color name="evaluate_content_color">#898989</color>
+    <color name="search_category_child_bc">#E6E0CD</color>
+    <color name="search_category_child_bc_pressed">#FFBA00</color>
+    <color name="shoper_response">#0080cc</color>
+    <!-- 团购 -->
+    <color name="unit_rule_context_color">#444444</color>
+    <color name="unit_select_bg">#656565</color>
+    <!-- 登录 -->
+    <color name="blue_logon">#0066cc</color>
+    <color name="rush_price">#543500</color>
+    <color name="blue_word">#008def</color>
+    <!-- 充值缴费 -->
+    <color name="phone_recharge_account_color">#999082</color>
+    <color name="recharge_account_color_select">#DCDCDC</color>
+
+    <!-- 彩票 -->
+    <color name="cp_lottery_link_blue">#1998ED</color>
+    <color name="cp_lottery_white">#ffffffff</color>
+    <color name="cp_lottery_black">#ff000000</color>
+    <color name="cp_lottery_darkgray">#ff938192</color>
+    <color name="cp_lottery_Silver">#ffcccccc</color>
+    <color name="cp_lottery_Silver11">#ff999999</color>
+    <color name="cp_lottery_lightgreen">#ff7cd12e</color>
+    <color name="cp_lottery_shen_black">#ff000033</color>
+    <color name="cp_lottery_zise">#ff660066</color>
+    <color name="cp_lottery_blue">#ff009999</color>
+    <color name="cp_lottery_silver_blue">#ff0066cc</color>
+    <color name="cp_lottery_yellow">#ffffff00</color>
+    <color name="cp_lottery_dark_yellow">#ffffdd00</color>
+    <color name="cp_lottery_red">#ffff0033</color>
+    <color name="cp_lottery_detail_blue">#ff003399</color>
+    <color name="cp_lottery_detail_red">#ffce0a0a</color>
+    <color name="cp_lottery_detail_gray">#ff878787</color>
+    <color name="cp_lottery_orange">#ffff8000</color>
+    <color name="cp_lottery_dark_blue">#ff0e3d9e</color>
+    <color name="cp_lottery_item_light">#ffF5F5F5</color>
+    <color name="cp_lottery_item_dark">#ffE6E6E6</color>
+    <color name="cp_lottery_item_selected">#ffD4EAFF</color>
+    <color name="cp_lottery_item_divider">#FFD3D3D3</color>
+    <color name="cp_lottery_item_divider_category">#FFB1B1B1</color>
+    <color name="cp_lottery_item_gray">#FFF0F0F0</color>
+    <color name="cp_lottery_background_gray">#FFE8E8E8</color>
+    <color name="cp_lottery_title">#FFf6d56a</color>
+    <color name="cp_lottery_item_cart">#EFF0F0</color>
+    <color name="cp_lottery_item_my_ebuy">#c9c9c9</color>
+    <color name="cp_lottery_no_transparent_white">#ffffff</color>
+    <color name="cp_lottery_hotdarkgray">#111111</color>
+    <color name="cp_lottery_hothalftransparent">#999D9D9D</color>
+    <color name="cp_lottery_adredhalftransparent">#60FACFCC</color>
+    <color name="cp_lottery_graycolor">#838282</color>
+    <color name="cp_lottery_text_gray">#6c6e70</color>
+    <color name="cp_lottery_text_black">#191919</color>
+    <color name="cp_lottery_more_login_in">#7D4700</color>
+    <color name="cp_lottery_more_login_out">#333333</color>
+    <color name="cp_lottery_bg_webview">#E8E7E1</color>
+    <color name="cp_lottery_translucent">#88000000</color>
+
+    <!-- 商品详情 -->
+    <color name="cp_lottery_good_detail_text_gray">#FF666666</color>
+    <color name="cp_lottery_good_detail_divider_gray">#FF999999</color>
+    <color name="cp_lottery_good_detail_goto_detail">#BBEEEEEE</color>
+    <color name="add_cart_disabled_text_color">#909090</color>
+    <color name="immediately_disabled_text_color">#e6e6e6</color>
+    <color name="orange_norrow">#F35935</color>
+    <color name="orange_pressed">#CF4C2D</color>
+    <color name="yellow_norrow">#FC7C26</color>
+    <color name="yellow_pressed">#D66A20</color>
+    <color name="evaluate_tab_bg">#D9D9D9</color>
+    <color name="addtional_evaluate_bg">#e5e5e5</color>
+
+    <!-- 条码扫描 -->
+    <color name="cp_lottery_transparent">#00000000</color>
+    <color name="cp_lottery_result_view">#b0000000</color>
+    <color name="cp_lottery_viewfinder_mask">#60000000</color>
+    <color name="cp_lottery_viewfinder_frame">#ff000000</color>
+    <color name="cp_lottery_possible_result_points">#c0ffff00</color>
+    <color name="cp_lottery_viewfinder_laser">#ffff0000</color>
+    <color name="cp_lottery_result_points">#c000ff00</color>
+    <color name="cp_lottery_line_color">#f6f6f6</color>
+    <color name="cp_lottery_dialog_button">#e40e03</color>
+    <color name="scan_center_line">#ffb400</color>
+    <!-- 开奖公告 -->
+    <color name="cp_lottery_red_ball">#DB192B</color>
+    <color name="cp_lottery_blue_ball">#05489E</color>
+
+    <!-- 我的彩票 -->
+    <color name="cp_lottery_text_ordercheck_black">#000000</color>
+    <color name="cp_lottery_text_ordercheck_white">#ffffff</color>
+
+    <!-- 我的彩票 -->
+    <color name="cp_lottery_groupbuy_progress_one_color">#AB0101</color>
+    <color name="cp_lottery_groupbuy_progress_two_color">#DD0000</color>
+    <color name="cp_lottery_groupbuy_progress_three_color">#FF4800</color>
+    <color name="cp_lottery_groupbuy_progress_four_color">#FFD800</color>
+    <!-- popuowindow -->
+    <color name="cp_lottery_popupwindow_normal">#fff9f9</color>
+    <color name="cp_lottery_popupwindow_selected">#f6ebeb</color>
+    <!-- 近期开奖 -->
+    <color name="cp_lottery_recent_stage">#666666</color>
+    <color name="cp_lottery_code_red">#990000</color>
+    <color name="cp_lottery_code_blue">#0483be</color>
+
+    <!-- 合买进度颜色渐变 -->
+    <color name="cp_lottery_groupbuy_progress_90_100">#ba0101</color>
+    <color name="cp_lottery_groupbuy_progress_80_90">#d90202</color>
+    <color name="cp_lottery_groupbuy_progress_70_80">#dd4712</color>
+    <color name="cp_lottery_groupbuy_progress_60_70">#f55c20</color>
+    <color name="cp_lottery_groupbuy_progress_50_60">#ff843a</color>
+    <color name="cp_lottery_groupbuy_progress_40_50">#ffa93a</color>
+    <color name="cp_lottery_groupbuy_progress_30_40">#ffc53a</color>
+    <color name="cp_lottery_groupbuy_progress_20_30">#ffdc3a</color>
+    <color name="cp_lottery_groupbuy_progress_10_20">#fff83a</color>
+    <color name="cp_lottery_groupbuy_progress_0_10">#ece99d</color>
+
+    <!-- 体育彩票 -->
+    <color name="cp_lottery_sports_red">#7a2020</color>
+    <color name="cp_lottery_sports_gray">#d7d7d7</color>
+    <color name="cp_lottery_sports_font_gray">#323232</color>
+    <color name="cp_lottery_sports_font_red">#666666</color>
+    <color name="cp_lottery_sports_font_group_red">#a40000</color>
+    <color name="cp_lottery_sports_font_write">#e1d4d4</color>
+    <!-- 投注列表 -->
+    <color name="cp_lottery_dan_normal">#411F1D</color>
+    <color name="cp_lottery_pass_uncheckable">#999999</color>
+    <color name="cp_lottery_list_item_pressed">#33B5B5B5</color>
+    <color name="cp_lottery_list_red">#CC0000</color>
+    <color name="return_select_delivery_blue">#008DEF</color>
+    <color name="return_service_text">#977C4F</color>
+    <!-- 确认投注 -->
+    <color name="cp_lottery_blue_light">#0970cc</color>
+    <color name="cp_lottery_diver">#cccccc</color>
+
+    <!-- 购物车用券分割线 -->
+    <color name="use_coupon_show_bottom_line">#D9D1BD</color>
+    <color name="add_coupon_text">#F17D00</color>
+    <color name="shoppingcart_product_errordesc">#e53b2c</color>
+    <!-- 在线咨询 -->
+    <color name="warm_tips_text">#FA8019</color>
+    <color name="warm_tips_content">#999999</color>
+
+    <!-- 本地生活 -->
+    <color name="listview_cache_color">#00000000</color>
+    <color name="listview_divider_color">#f2eee0</color>
+
+    <!-- 酒店查询  酒店地址 -->
+    <color name="FCFCFD">#FCFCFD</color>
+    <color name="DCDCDC">#DCDCDC</color>
+    <color name="logics_text_color">#ff7800</color>
+    <color name="service_text_color">#fffc7c26</color>
+    <color name="store_text_color">#ff3c00</color>
+    <color name="come_on_store_hint_color">#e18d00</color>
+    <color name="address_manager_address">#707070</color>
+
+    <!-- 用户反馈 -->
+    <color name="feed_tab_text_unselect">#7a7a7a</color>
+    <color name="feed_tab_text_select">#fc8a42</color>
+    <color name="feed_tab_line_select">#fc7c26</color>
+    <color name="feed_tab_line_unselect">#ebebeb</color>
+    <color name="feed_btn_submit_unselect">#fc7c26</color>
+
+    <!-- 在线客服 -->
+
+    <color name="chat_express_select">#717171</color>
+    <color name="chat_express_unselect">#BFBFBF</color>
+    <!-- 收藏夹 -->
+    <color name="favorite_item_price_flag_color">#EA0000</color>
+    <!-- 摇一摇 -->
+    <color name="shake_red">#c51c01</color>
+    <color name="shake_white">#ffffff</color>
+    <color name="shake_sky_blue">#1896c9</color>
+    <color name="shake_light_gray">#eee</color>
+    <color name="shake_dark_gray">#7f7f7f</color>
+    <color name="shake_dark_red">#8a1401</color>
+    <color name="shake_black">#313131</color>
+    <color name="shake_rule_bg">#31e8701d</color>
+    <color name="shake_light_orange">#ffb22f</color>
+    <color name="shake_dark_orange_tc">#fc7c26</color>
+    <color name="shake_dark_orange">#fc9526</color>
+    <!-- 声波 -->
+    <color name="sound_circle_color_gray">#006799</color>
+    <color name="voice_tech_tips">#d2d2d2</color>
+    <color name="search_clear_color">#bababa</color>
+    <color name="search_confirm_color">#fc7b27</color>
+    <!-- 我的预约 -->
+    <color name="myappoint_line_selected">#ff6a00</color>
+    <color name="hot_words_line_color">#d9d9d9</color>
+    <color name="search_filter_two_color">#f1f1f1</color>
+    <!-- 评价晒单 -->
+    <color name="evaluate_hint_color">#cbcaca</color>
+    <color name="upload_pic_tips_color">#707070</color>
+    <color name="additional_eva_title">#303030</color>
+
+    <!-- 新版登录注册 -->
+    <color name="logon_white_selected">#ffffff</color>
+    <color name="logon_white_unselected">#f6d1be</color>
+    <color name="foget_password_yellow">#fc7c26</color>
+    <color name="bestie_commit_default">#ff5b98</color>
+    <color name="bestie_commit_pressed">#cc497a</color>
+    <color name="share_body">#cc000000</color>
+    <color name="register_progress_deep_yellow">#f29400</color>
+    <color name="register_progress_shallow_yellow">#f2bd85</color>
+
+    <!-- 购物车 -->
+    <color name="bg_esb">#b2eda200</color>
+    <color name="bg_invalid">#b2000000</color>
+    <color name="bg_already_down">#b2eb3b17</color>
+    <color name="activity_desc_bg">#ffaa00</color>
+    <color name="activity_desc_text">#ffffff</color>
+    <color name="total_1">#909090</color>
+    <color name="total_2">#e21d1d</color>
+    <color name="total_bg">#e5353d44</color>
+    <color name="total_bg_2">#e5100f0c</color>
+    <color name="cart_product_name">#353d44</color>
+    <color name="order_detail_txt_color">#353D44</color>
+    <color name="order_detail_time_color">#909090</color>
+    <color name="order_detail_btn_text_color">#DCDCDC</color>
+    <color name="order_item_detail_status_text_color">#2E8FFD</color>
+    <color name="cart2_total_price">#494847</color>
+    <color name="cart2_favor_price">#FF8359</color>
+    <color name="cart2_coupon_price">#9cb2e3</color>
+
+    <!-- tab栏背景色 -->
+    <color name="tab_item_bg">#100f0c</color>
+
+    <!-- 电子会员卡 -->
+    <color name="elec_card_text_color">#8c6531</color>
+    <color name="elec_card_text_light_gray">#909090</color>
+    <color name="process_text_color_yellow">#eac588</color>
+    <color name="process_text_color_deep_yellow">#e6a40b</color>
+    <color name="process_text_color_gray">#909090</color>
+    <color name="hint_color_300">#cacaca</color>
+    <!-- 易购券Tab按钮背景色 -->
+    <color name="ticket_tab_bg">#eda200</color>
+    <!-- 快递员 -->
+    <color name="courier_name_text_color">#2e8ffd</color>
+    <!-- 订单详情 -->
+    <color name="order_detail_button_color">#2e8ffd</color>
+    <color name="order_detail_button_bg">#e5000000</color>
+    <!-- 我的易购 -->
+    <color name="act_myebuy_bg">#f2f2f2</color>
+    <color name="act_myebuy_color1">#909090</color>
+    <color name="act_myebuy_color2">#f29400</color>
+    <color name="act_myebuy_red">#e21d1d</color>
+    <color name="act_myebuy_image_bg">#ffdcdcdc</color>
+    <color name="package_price_bg">#cc353d44</color>
+
+    <!-- 发现模块 -->
+    <color name="little_white">#fff7f2e9</color>
+    <color name="color_gray_f7f5f5">#f7f5f5</color>
+    <color name="color_gray_999999">#999999</color>
+    <color name="color_yellow_ff6600">#ff6600</color>
+    <color name="color_gray_313131">#313131</color>
+    <color name="color_gray_313d44">#313d44</color>
+    <color name="color_gray_707070">#707070</color>
+    <color name="color_gray_797979">#a0797979</color>
+    <color name="label_bg">#a0000000</color>
+    <color name="tab_transparent">#E5000000</color>
+    <color name="tab_bg">#2e2e2e</color>
+    <color name="black_transparent">#a1000000</color>
+    <color name="color_gray_95000000">#95000000</color>
+    <color name="color_gray_e4e4e4">#e4e4e4</color>
+    <color name="color_gray_eaeaea">#eaeaea</color>
+    <color name="color_black_333333">#333333</color>
+    <color name="color_grey_999999">#999999</color>
+    <color name="color_black_d9d9d9">#d9d9d9</color>
+    <color name="color_purple_bd6aff">#bd6aff</color>
+    <color name="GreyWhite_has_alpha">#66FAFAFA</color>
+    <color name="action_bar_tittle_color_555555">#555555</color>
+    <color name="color_black_313d44">#313d44</color>
+    <color name="color_gray_cacaca">#cacaca</color>
+    <color name="color_discover_nick">#118ba7</color>
+
+    <!-- end 发现模块 -->
+    <!-- 新人礼包 -->
+    <color name="orange_bg_color">#f9ad8b</color>
+    <color name="divider_line_color">#dcdcdc</color>
+    <color name="line">#dddddd</color>
+
+    <!-- 我的佣金 -->
+    <color name="my_reward_menu_press">#f52053</color>
+    <!-- end 我的佣金 -->
+    <color name="category_first_list_bgcolor">#f3f4f6</color>
+
+    <color name="floortitle1">#5bca96</color>
+    <color name="floortitle2">#30a1e8</color>
+    <color name="floortitle3">#353d44</color>
+    <color name="floortitle4">#a770ae</color>
+    <color name="floortitle5">#ea4e4e</color>
+    <color name="floortitle6">#ed7b00</color>
+
+    <color name="click">#f1f1f1</color>
+</resources>

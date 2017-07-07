@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest package="com.base.application.baseapplication"
+          xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- 访问 WIFI 状态 -->
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <!-- 改变 WIFI 状态 -->
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <!-- 检查网络状态 -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
+    <uses-permission android:name="android.permission.SYSTEM_OVERLAY_WINDOW" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:name=".BasicApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name=".MainActivity"
+            android:theme="@style/AppThemeTool"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.base.application.baseapplication.jncax.blockview.BlockViewActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name="com.base.application.baseapplication.jncax.foldingmenu.FoldingActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name="com.base.application.baseapplication.jncax.expandtable.ExpandTableActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name="com.base.application.baseapplication.jncax.qrcode.QRCodeActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name="com.base.application.baseapplication.jncax.draw.DrawActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name="com.base.application.baseapplication.jncax.animation.AnimationActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name="com.base.application.baseapplication.jncax.animation.LayoutAnimationsActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name="com.base.application.baseapplication.jncax.animation.Animation3DActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name="com.base.application.baseapplication.jncax.animation.Animation3DActivity2"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name="com.base.application.baseapplication.jncax.coordinatorlayout.CoordinatorLayoutActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppThemeTool"/>
+        <activity
+            android:name="com.base.application.baseapplication.jncax.coordinatorlayout.ScrollViewPagerActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppThemeTool"/>
+        <activity
+            android:name="com.base.application.baseapplication.jncax.coordinatorlayout.DrawerLayoutWithNestedSrcollViewActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppThemeTool"/>
+        <activity
+            android:name="com.base.application.baseapplication.jncax.smarttab.FiveActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppThemeTool"/>
+    </application>
+
+</manifest>

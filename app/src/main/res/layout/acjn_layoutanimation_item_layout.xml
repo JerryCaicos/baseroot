@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical"
+              android:paddingBottom="4dip"
+              android:paddingLeft="10dip"
+              android:paddingRight="10dip"
+              android:paddingTop="4dip">
+
+    <TextView
+        android:id="@+id/item_name"
+        android:layout_width="match_parent"
+        android:layout_height="30dip"
+        android:textColor="@color/black_30"/>
+
+    <TextView
+        android:id="@+id/item_sex"
+        android:layout_width="match_parent"
+        android:layout_height="30dip"
+        android:textColor="@color/black_30"/>
+</LinearLayout>

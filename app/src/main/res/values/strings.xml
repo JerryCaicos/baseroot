@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">BaseApplication</string>
+
+    <string name="shoppingcart_edit_prompt">编辑</string>
+
+    <string name="app_dialog_cancel">取消</string>
+    <string name="app_dialog_confirm">确定</string>
+    
+    <string name="acjn_open">打开</string>
+    <string name="acjn_close">关闭</string>
+</resources>

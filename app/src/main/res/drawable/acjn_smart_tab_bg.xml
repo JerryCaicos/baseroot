@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:drawable="@drawable/acjn_smart_tab_text_bg" android:state_selected="true" android:state_pressed="true"/>
+    <item android:drawable="@drawable/acjn_smart_tab_text_bg" android:state_selected="true" android:state_pressed="false"/>
+    <item android:color="@color/pub_color_two" android:state_selected="false" android:state_pressed="false"/>
+</selector>

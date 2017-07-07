@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical">
+
+    <EditText
+        android:id="@+id/qr_code_edit_text"
+        android:layout_width="fill_parent"
+        android:layout_height="120dip"
+        android:layout_marginLeft="12dip"
+        android:layout_marginRight="12dip"
+        android:layout_marginTop="12dip"
+        android:gravity="left"
+        android:hint="请输入生成二维码文本"
+        android:textColor="@color/pub_color_three"
+        android:textSize="18sp"/>
+
+    <TextView
+        android:id="@+id/qr_code_btn"
+        android:layout_width="fill_parent"
+        android:layout_height="48dip"
+        android:layout_marginLeft="12dip"
+        android:layout_marginRight="12dip"
+        android:layout_marginTop="12dip"
+        android:background="@drawable/bg_btn_custom"
+        android:gravity="center"
+        android:text="生成二维码"
+        android:textColor="@color/pub_color_three"
+        android:textSize="18sp"/>
+
+    <ImageView
+        android:id="@+id/qr_code_image_view"
+        android:layout_width="240dip"
+        android:layout_marginTop="12dip"
+        android:layout_height="240dip"
+        android:src="@drawable/acjn_qrcode_bg"
+        android:scaleType="fitXY"
+        android:layout_gravity="center_horizontal"/>
+
+
+</LinearLayout>
