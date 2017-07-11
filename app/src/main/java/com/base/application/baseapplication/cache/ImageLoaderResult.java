@@ -3,7 +3,7 @@ package com.base.application.baseapplication.cache;
 import android.graphics.Bitmap;
 
 /**
- * Created by adminchen on 16/4/13 17:41.
+ * Created by JerryCaicos on 16/4/13 17:41.
  */
 public class ImageLoaderResult
 {

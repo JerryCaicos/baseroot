@@ -11,7 +11,7 @@ import android.widget.TextView;
 import com.base.application.baseapplication.R;
 
 /**
- * Created by adminchen on 16/6/24 17:11.
+ * Created by JerryCaicos on 16/6/24 17:11.
  */
 public class Animation3DActivity2 extends Activity
 {

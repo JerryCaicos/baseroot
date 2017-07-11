@@ -3,7 +3,7 @@ package com.base.application.baseapplication.jncax.foldingmenu;
 import android.os.Build;
 
 /**
- * Created by adminchen on 16/1/22 10:38.
+ * Created by JerryCaicos on 16/1/22 10:38.
  */
 public class Util
 {

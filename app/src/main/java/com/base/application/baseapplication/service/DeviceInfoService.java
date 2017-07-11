@@ -20,7 +20,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 /**
- * Created by adminchen on 16/1/16.
+ * Created by JerryCaicos on 16/1/16.
  */
 public class DeviceInfoService implements BasicService
 {

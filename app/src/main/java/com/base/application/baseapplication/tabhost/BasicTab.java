@@ -4,7 +4,7 @@ import android.os.Bundle;
 import android.widget.TabHost;
 
 /**
- * Created by adminchen on 16/1/16.
+ * Created by JerryCaicos on 16/1/16.
  */
 public class BasicTab
 {

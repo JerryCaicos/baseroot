@@ -4,6 +4,19 @@
     <style name="AppTheme" parent="@android:style/Theme.Light">
         <!-- Customize your theme here. -->
     </style>
+
+    <declare-styleable name="FlowLayout">
+        <attr name="maxLine" format="integer"/>
+        <attr name="horizontalSpac" format="dimension|reference"/>
+        <attr name="verticalSpac" format="dimension|reference"/>
+        <attr name="layoutGravity" format="enum">
+            <enum name="alignLeft" value="0"/>
+            <enum name="alignCenter" value="1"/>
+            <enum name="alignRight" value="2"/>
+        </attr>
+
+    </declare-styleable>
+
     <!-- 自定义控件 BlockView -->
     <declare-styleable name="BlockView">
         <attr name="horizontalSpacing" format="dimension"/>

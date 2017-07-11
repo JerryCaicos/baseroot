@@ -27,7 +27,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by adminchen on 16/1/29 11:14.
+ * Created by JerryCaicos on 16/1/29 11:14.
  */
 public class ExpandTableActivity extends Activity implements ExpandGridAdapter.OnClick
 {

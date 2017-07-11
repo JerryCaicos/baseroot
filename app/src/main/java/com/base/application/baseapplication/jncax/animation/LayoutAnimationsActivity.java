@@ -16,7 +16,7 @@ import java.util.HashMap;
 import java.util.List;
 
 /**
- * Created by adminchen on 16/6/24 11:11.
+ * Created by JerryCaicos on 16/6/24 11:11.
  */
 public class LayoutAnimationsActivity extends Activity
 {

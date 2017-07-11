@@ -12,7 +12,7 @@ import android.widget.TextView;
 import com.base.application.baseapplication.R;
 
 /**
- * Created by adminchen on 16/1/16.
+ * Created by JerryCaicos on 16/1/16.
  */
 public class BasicToast
 {

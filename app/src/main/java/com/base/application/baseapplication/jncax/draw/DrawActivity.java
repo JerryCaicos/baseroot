@@ -7,7 +7,7 @@ import android.widget.LinearLayout;
 import com.base.application.baseapplication.R;
 
 /**
- * Created by adminchen on 16/3/2 11:27.
+ * Created by JerryCaicos on 16/3/2 11:27.
  */
 public class DrawActivity extends Activity
 {

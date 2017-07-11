@@ -1,7 +1,7 @@
 package com.base.application.baseapplication.jncax.snowfall;
 
 /**
- * Created by adminchen on 16/4/22 10:11.
+ * Created by JerryCaicos on 16/4/22 10:11.
  */
 public class Random
 {

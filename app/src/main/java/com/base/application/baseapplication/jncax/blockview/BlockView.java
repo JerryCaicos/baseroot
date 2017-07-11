@@ -16,7 +16,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by adminchen on 16/1/20 14:24.
+ * Created by JerryCaicos on 16/1/20 14:24.
  */
 public class BlockView extends RelativeLayout
 {

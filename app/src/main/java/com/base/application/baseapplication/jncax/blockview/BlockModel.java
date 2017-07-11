@@ -1,7 +1,7 @@
 package com.base.application.baseapplication.jncax.blockview;
 
 /**
- * Created by adminchen on 16/1/20 16:19.
+ * Created by JerryCaicos on 16/1/20 16:19.
  */
 public class BlockModel
 {

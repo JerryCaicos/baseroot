@@ -9,7 +9,7 @@ import java.util.Queue;
 import java.util.concurrent.LinkedBlockingQueue;
 
 /**
- * Created by adminchen on 16/1/16.
+ * Created by JerryCaicos on 16/1/16.
  */
 public class BasicToastManager extends Handler
 {

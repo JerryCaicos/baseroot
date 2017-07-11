@@ -19,7 +19,7 @@ import java.io.OutputStream;
 import java.util.Locale;
 
 /**
- * Created by adminchen on 16/4/13 17:36.
+ * Created by JerryCaicos on 16/4/13 17:36.
  */
 public class BasicDiskCache
 {

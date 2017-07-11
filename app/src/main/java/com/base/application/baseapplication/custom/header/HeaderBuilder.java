@@ -1,7 +1,7 @@
 package com.base.application.baseapplication.custom.header;
 
 /**
- * Created by adminchen on 16/1/16.
+ * Created by JerryCaicos on 16/1/16.
  */
 
 import android.annotation.SuppressLint;

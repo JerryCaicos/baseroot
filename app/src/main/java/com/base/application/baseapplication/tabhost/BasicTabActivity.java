@@ -19,7 +19,7 @@ import com.base.application.baseapplication.R;
 import java.util.List;
 
 /**
- * Created by adminchen on 16/1/16.
+ * Created by JerryCaicos on 16/1/16.
  */
 public abstract class BasicTabActivity extends BasicActivity
 {

@@ -3,7 +3,7 @@ package com.base.application.baseapplication.service;
 import android.content.Context;
 
 /**
- * Created by adminchen on 16/1/16.
+ * Created by JerryCaicos on 16/1/16.
  */
 public interface BasicService
 {

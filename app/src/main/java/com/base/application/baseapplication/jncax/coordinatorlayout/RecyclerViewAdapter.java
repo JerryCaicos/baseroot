@@ -12,7 +12,7 @@ import com.base.application.baseapplication.R;
 import java.util.List;
 
 /**
- * Created by adminchen on 16/9/27 11:29.
+ * Created by JerryCaicos on 16/9/27 11:29.
  */
 public class RecyclerViewAdapter extends RecyclerView.Adapter<ViewHolder>
 {

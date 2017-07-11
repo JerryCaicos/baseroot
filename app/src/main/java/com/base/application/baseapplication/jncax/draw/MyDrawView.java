@@ -8,7 +8,7 @@ import android.graphics.RectF;
 import android.view.View;
 
 /**
- * Created by adminchen on 16/3/2 11:31.
+ * Created by JerryCaicos on 16/3/2 11:31.
  */
 public class MyDrawView extends View
 {

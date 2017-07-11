@@ -5,7 +5,7 @@ import android.graphics.Paint;
 import android.graphics.Point;
 
 /**
- * Created by adminchen on 16/4/22 10:27.
+ * Created by JerryCaicos on 16/4/22 10:27.
  */
 public class SnowFlake
 {

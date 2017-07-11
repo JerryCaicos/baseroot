@@ -26,7 +26,7 @@ import rx.Observer;
 import rx.Subscriber;
 
 /**
- * Created by adminchen on 16/2/2 09:41.
+ * Created by JerryCaicos on 16/2/2 09:41.
  */
 public class QRCodeActivity extends Activity
 {

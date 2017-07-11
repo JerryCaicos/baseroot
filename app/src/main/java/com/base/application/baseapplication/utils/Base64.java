@@ -3,7 +3,7 @@ package com.base.application.baseapplication.utils;
 import java.io.ByteArrayOutputStream;
 
 /**
- * Created by adminchen on 16/1/16.
+ * Created by JerryCaicos on 16/1/16.
  */
 public class Base64
 {

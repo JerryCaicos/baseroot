@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by adminchen on 16/1/20 10:56.
+ * Created by JerryCaicos on 16/1/20 10:56.
  */
 public class BlockViewActivity extends Activity
 {

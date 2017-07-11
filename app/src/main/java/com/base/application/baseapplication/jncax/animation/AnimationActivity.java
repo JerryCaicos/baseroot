@@ -17,7 +17,7 @@ import com.base.application.baseapplication.R;
 
 
 /**
- * Created by adminchen on 16/6/23 14:56.
+ * Created by JerryCaicos on 16/6/23 14:56.
  */
 public class AnimationActivity extends Activity
 {

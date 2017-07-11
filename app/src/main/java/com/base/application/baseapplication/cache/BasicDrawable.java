@@ -6,7 +6,7 @@ import android.graphics.Canvas;
 import android.graphics.drawable.BitmapDrawable;
 
 /**
- * Created by adminchen on 16/6/23 22:13.
+ * Created by JerryCaicos on 16/6/23 22:13.
  */
 public class BasicDrawable extends BitmapDrawable
 {

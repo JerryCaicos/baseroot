@@ -15,7 +15,7 @@ import android.widget.RelativeLayout;
 import com.base.application.baseapplication.R;
 
 /**
- * Created by adminchen on 16/1/22 10:41.
+ * Created by JerryCaicos on 16/1/22 10:41.
  */
 public class FoldingActivity extends Activity
 {

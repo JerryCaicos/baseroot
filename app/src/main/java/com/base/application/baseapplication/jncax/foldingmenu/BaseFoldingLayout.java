@@ -1,7 +1,7 @@
 package com.base.application.baseapplication.jncax.foldingmenu;
 
 /**
- * Created by adminchen on 16/1/22 10:30.
+ * Created by JerryCaicos on 16/1/22 10:30.
  */
 
 import android.content.Context;

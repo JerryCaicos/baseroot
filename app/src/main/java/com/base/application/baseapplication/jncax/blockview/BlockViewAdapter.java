@@ -13,7 +13,7 @@ import com.base.application.baseapplication.R;
 import java.util.List;
 
 /**
- * Created by adminchen on 16/1/20 14:59.
+ * Created by JerryCaicos on 16/1/20 14:59.
  */
 public class BlockViewAdapter extends BaseAdapter
 {

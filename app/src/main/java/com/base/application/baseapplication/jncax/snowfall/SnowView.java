@@ -7,7 +7,7 @@ import android.util.AttributeSet;
 import android.view.View;
 
 /**
- * Created by adminchen on 16/4/22 10:27.
+ * Created by JerryCaicos on 16/4/22 10:27.
  */
 public class SnowView extends View
 {

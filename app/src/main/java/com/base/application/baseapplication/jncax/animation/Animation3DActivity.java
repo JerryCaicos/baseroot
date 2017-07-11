@@ -15,7 +15,7 @@ import android.widget.ListView;
 import com.base.application.baseapplication.R;
 
 /**
- * Created by adminchen on 16/6/24 15:06.
+ * Created by JerryCaicos on 16/6/24 15:06.
  */
 public class Animation3DActivity extends Activity implements
 		AdapterView.OnItemClickListener, View.OnClickListener

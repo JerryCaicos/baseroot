@@ -5,7 +5,7 @@ import com.base.application.baseapplication.BasicApplication;
 import com.base.application.baseapplication.custom.toast.BasicToast;
 
 /**
- * Created by adminchen on 16/1/16.
+ * Created by JerryCaicos on 16/1/16.
  */
 public class ToastUtils
 {

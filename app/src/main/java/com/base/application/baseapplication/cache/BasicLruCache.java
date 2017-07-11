@@ -8,7 +8,7 @@ import com.base.application.baseapplication.utils.LogUtils;
 import java.util.LinkedHashMap;
 
 /**
- * Created by adminchen on 16/4/13 17:35.
+ * Created by JerryCaicos on 16/4/13 17:35.
  */
 public class BasicLruCache extends LruCache<String,Bitmap>
 {

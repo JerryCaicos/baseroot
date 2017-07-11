@@ -28,7 +28,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by adminchen on 16/9/5 17:40.
+ * Created by JerryCaicos on 16/9/5 17:40.
  */
 public class CoordinatorLayoutActivity extends AppCompatActivity
 {
