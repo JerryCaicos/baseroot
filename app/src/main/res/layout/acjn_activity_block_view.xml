@@ -5,16 +5,32 @@
               android:orientation="vertical">
 
     <com.base.application.baseapplication.jncax.blockview.BlockView
-        android:id="@+id/block_view"
         xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/block_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="30dip"
-        android:layout_marginLeft="12dip"
-        android:layout_marginRight="12dip"
         android:layout_marginTop="30dip"
+        android:background="@color/act_myebuy_color1"
+        android:visibility="visible"
         app:autoMatchBlockWidth="true"
         app:horizontalSpacing="10dip"
         app:verticalSpacing="10dip"/>
+
+
+    <com.base.application.baseapplication.jncax.flowlayout.FlowLayout
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/flow_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/act_myebuy_red"
+        android:paddingBottom="15dip"
+        android:paddingTop="15dip"
+        app:autoMatchLayout="true"
+        app:horizontalSpac="10dip"
+        app:maxLine="2"
+        app:paddingLeft="15dip"
+        app:paddingRight="15dip"
+        app:verticalSpac="10dip"/>
 
 </LinearLayout>

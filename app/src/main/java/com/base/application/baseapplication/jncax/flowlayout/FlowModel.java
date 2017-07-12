@@ -14,14 +14,21 @@ public class FlowModel
 
     }
 
+    public FlowModel(String name,boolean checked)
+    {
+        itemName = name;
+        isChecked = checked;
+    }
+
+
     public boolean isChecked()
     {
         return isChecked;
     }
 
-    public void setChecked(boolean checked)
+    public void setChecked()
     {
-        isChecked = checked;
+        isChecked = !isChecked;
     }
 
     public String getItemName()

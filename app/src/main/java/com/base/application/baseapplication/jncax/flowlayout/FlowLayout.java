@@ -3,33 +3,39 @@ package com.base.application.baseapplication.jncax.flowlayout;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.util.AttributeSet;
+import android.util.SparseArray;
 import android.view.View;
-import android.view.ViewGroup;
+import android.widget.RelativeLayout;
 
 import com.base.application.baseapplication.R;
 import com.base.application.baseapplication.utils.DimenUtils;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by JerryCaicos on 2017/7/11.
  */
 
-public class FlowLayout extends ViewGroup
+public class FlowLayout extends RelativeLayout
 {
-    public static final int GRAVITY_LEFT = 0;
-
-    public static final int GRAVITY_CENTER = 1;
-
-    public static final int GRAVITY_RIGHT = 2;
-
     private Context mContext;
 
-    private int maxLine;
+    private int maxLine = 99;
 
     private int horizontalSpac;
 
     private int verticalSpac;
 
-    private int layoutGravity;
+    private int measureWidth;
+
+    private int paddingLeft;
+
+    private int paddingRight;
+
+    private boolean autoMatchLayout;
+
+    private int currentLine = 0;
 
     private FlowLayoutAdapter adapter;
 
@@ -37,23 +43,13 @@ public class FlowLayout extends ViewGroup
 
     private OnItemLongClickedListener longClickedListener;
 
+    private SparseArray<List<View>> sparseArray;
 
-    public FlowLayout(Context context)
-    {
-        super(context);
-        mContext = context;
-    }
+    //    private List<View> itemList;
 
     public FlowLayout(Context context, AttributeSet attrs)
     {
         super(context, attrs);
-        mContext = context;
-        initAttrs(context, attrs);
-    }
-
-    public FlowLayout(Context context, AttributeSet attrs, int defStyleAttr)
-    {
-        super(context, attrs, defStyleAttr);
         mContext = context;
         initAttrs(context, attrs);
     }
@@ -68,12 +64,9 @@ public class FlowLayout extends ViewGroup
         maxLine = typedArray.getInt(R.styleable.FlowLayout_maxLine, Integer.MAX_VALUE);
         horizontalSpac = typedArray.getDimensionPixelSize(R.styleable.FlowLayout_horizontalSpac, defaultHorizontal);
         verticalSpac = typedArray.getDimensionPixelSize(R.styleable.FlowLayout_verticalSpac, defaultVertical);
-        layoutGravity = typedArray.getInt(R.styleable.FlowLayout_layoutGravity, 0);
-    }
-
-    public int getMaxLine()
-    {
-        return maxLine;
+        autoMatchLayout = typedArray.getBoolean(R.styleable.FlowLayout_autoMatchLayout, false);
+        paddingLeft = typedArray.getDimensionPixelSize(R.styleable.FlowLayout_paddingLeft, 0);
+        paddingRight = typedArray.getDimensionPixelSize(R.styleable.FlowLayout_paddingRight, 0);
     }
 
     public void setMaxLine(int maxLine)
@@ -81,19 +74,9 @@ public class FlowLayout extends ViewGroup
         this.maxLine = maxLine;
     }
 
-    public int getHorizontalSpac()
-    {
-        return horizontalSpac;
-    }
-
     public void setHorizontalSpac(int horizontalSpac)
     {
         this.horizontalSpac = horizontalSpac;
-    }
-
-    public int getVerticalSpac()
-    {
-        return verticalSpac;
     }
 
     public void setVerticalSpac(int verticalSpac)
@@ -101,40 +84,9 @@ public class FlowLayout extends ViewGroup
         this.verticalSpac = verticalSpac;
     }
 
-    public int getLayoutGravity()
-    {
-        return layoutGravity;
-    }
-
-    public void setLayoutGravity(int layoutGravity)
-    {
-        this.layoutGravity = layoutGravity;
-    }
-
-    public FlowLayoutAdapter getAdapter()
-    {
-        return adapter;
-    }
-
-    public void setAdapter(FlowLayoutAdapter adapter)
-    {
-        this.adapter = adapter;
-        requestLayout();
-    }
-
-    public OnItemClickedListener getClickedListener()
-    {
-        return clickedListener;
-    }
-
     public void setClickedListener(OnItemClickedListener clickedListener)
     {
         this.clickedListener = clickedListener;
-    }
-
-    public OnItemLongClickedListener getLongClickedListener()
-    {
-        return longClickedListener;
     }
 
     public void setLongClickedListener(OnItemLongClickedListener longClickedListener)
@@ -145,31 +97,36 @@ public class FlowLayout extends ViewGroup
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec)
     {
-        if(adapter == null)
-        {
-            super.onMeasure(widthMeasureSpec, heightMeasureSpec);
-        }
-        else
-        {
-            measureLayout(widthMeasureSpec, heightMeasureSpec);
-        }
+        super.onMeasure(widthMeasureSpec, heightMeasureSpec);
+        measureWidth = MeasureSpec.getSize(widthMeasureSpec);
     }
 
-    private void measureLayout(int widthMeasureSpec, int heightMeasureSpec)
+    public void setAdapter(FlowLayoutAdapter adapter)
     {
-        /**FlowLayout控件的宽度**/
-        int width = horizontalSpac;
-        /**FlowLayout控件的高度**/
-        int height = verticalSpac;
+        removeAllViews();
+        this.adapter = adapter;
+        //        if(itemList == null)
+        //        {
+        //            itemList = new ArrayList<>();
+        //        }
+        initSparseArray();
+        measureLayout();
+        addItems();
+    }
+
+    private void initSparseArray()
+    {
+        currentLine = 0;
+        sparseArray = new SparseArray<List<View>>();
+        sparseArray.put(currentLine, new ArrayList<View>());
+    }
+
+    private void measureLayout()
+    {
         /**每行标签的最宽宽度**/
-        int lineWidth = 0;
+        int lineWidth = paddingLeft;
         /**每行标签的最高高度**/
         int lineHeight = 0;
-
-        int measureWidth = MeasureSpec.getSize(widthMeasureSpec);
-        int measureHeight = MeasureSpec.getSize(heightMeasureSpec);
-        int measureWidthMode = MeasureSpec.getMode(widthMeasureSpec);
-        int measuerHeightMode = MeasureSpec.getMode(heightMeasureSpec);
 
         int count = adapter.getCount();
         View itemView;
@@ -205,79 +162,129 @@ public class FlowLayout extends ViewGroup
             itemView.measure(MeasureSpec.makeMeasureSpec(0, MeasureSpec.UNSPECIFIED),
                     MeasureSpec.makeMeasureSpec(0, MeasureSpec.UNSPECIFIED));
 
-            MarginLayoutParams params = (MarginLayoutParams) itemView.getLayoutParams();
+            RelativeLayout.LayoutParams params = new RelativeLayout.LayoutParams(LayoutParams.WRAP_CONTENT,
+                    LayoutParams.WRAP_CONTENT);
 
-            /**当前标签的宽度**/
             int itemWidth = itemView.getMeasuredWidth();
-            /**当前标签的高度**/
             int itemHeight = itemView.getMeasuredHeight();
 
             //当前绘制的x坐标 + 标签宽度如果大于父布局宽度，则说明需要换行绘制
-            if(lineWidth + itemWidth > measureWidth)
+            if(lineWidth + itemWidth > measureWidth - paddingLeft - paddingRight)
             {
-                params.leftMargin = horizontalSpac;
-                params.topMargin = lineHeight + verticalSpac;
-
-                width = Math.max(lineWidth, width);
-                height += lineHeight + verticalSpac;
-
                 lineHeight += itemHeight + verticalSpac;
-                lineWidth = itemWidth + horizontalSpac;
+                lineWidth = paddingLeft;
+                params.leftMargin = lineWidth;
+                params.topMargin = lineHeight;
+
+                lineWidth += itemWidth + horizontalSpac;
+
+                currentLine++;
+                sparseArray.put(currentLine, new ArrayList<View>());
             }
             else
             {
                 params.leftMargin = lineWidth;
-                params.topMargin = height;
+                params.topMargin = lineHeight;
 
                 lineWidth += itemWidth + horizontalSpac;
-                lineHeight = Math.max(lineHeight, itemHeight + verticalSpac);
             }
 
             itemView.setLayoutParams(params);
 
-            if(i == count - 1)
-            {
-                height += verticalSpac;
-                width = Math.max(width, lineWidth);
-            }
-        }
+            //            itemList.add(itemView);
+            sparseArray.get(currentLine).add(itemView);
 
-        setMeasuredDimension((measureWidthMode == MeasureSpec.EXACTLY) ? measureWidth : width,
-                (measuerHeightMode == MeasureSpec.EXACTLY) ? measureHeight : height);
+        }
     }
 
-    @Override
-    protected void onLayout(boolean changed, int l, int t, int r, int b)
+    private void addItems()
     {
-        if(adapter != null)
+        //        if(itemList == null || itemList.size() <= 0)
+        //        {
+        //            return;
+        //        }
+        //        for(View view : itemList)
+        //        {
+        //            addView(view);
+        //        }
+
+        for(int i = 0; i < currentLine + 1; i++)
         {
-            int count = adapter.getCount();
-            View itemView;
-            for(int i = 0; i < count; i++)
+            List<View> list = sparseArray.get(i);
+            if(list == null)
             {
-                itemView = adapter.getView(i, null, null);
-                MarginLayoutParams params = (MarginLayoutParams) itemView.getLayoutParams();
-                itemView.layout(params.leftMargin, params.topMargin, params.rightMargin, params.bottomMargin);
+                continue;
             }
+            addLineItem(list);
         }
     }
 
-    @Override
-    protected LayoutParams generateDefaultLayoutParams()
+    private void addLineItem(List<View> list)
     {
-        return new MarginLayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT);
-    }
+        View view;
+        int lineSize = list.size();
+        if(autoMatchLayout)
+        {
+            int autoPadding = 0;
+            View lastView = list.get(lineSize - 1);
+            RelativeLayout.LayoutParams lastParam = (LayoutParams) lastView.getLayoutParams();
+            autoPadding = measureWidth - lastView.getMeasuredWidth() - lastParam.leftMargin - paddingLeft;
+            if(lineSize != 1)
+            {
+                autoPadding = autoPadding / (lineSize * 2);
+            }
+            else
+            {
+                autoPadding = autoPadding / 2;
+            }
+            int offset = 0;
+            for(int j = 0; j < lineSize; j++)
+            {
+                view = list.get(j);
 
-    @Override
-    protected LayoutParams generateLayoutParams(LayoutParams p)
-    {
-        return new MarginLayoutParams(p);
-    }
+                RelativeLayout.LayoutParams params = (LayoutParams) view.getLayoutParams();
 
-    @Override
-    public LayoutParams generateLayoutParams(AttributeSet attrs)
-    {
-        return new MarginLayoutParams(getContext(), attrs);
+                view.setPadding(view.getPaddingLeft() + autoPadding,
+                        view.getPaddingTop(),
+                        view.getPaddingRight() + autoPadding,
+                        view.getPaddingBottom());
+                params.leftMargin += offset;
+                offset = (j + 1)* 2 * autoPadding;
+//                if(j == 0)
+//                {
+//                    view.setPadding(view.getPaddingLeft(),
+//                            view.getPaddingTop(),
+//                            view.getPaddingRight() + autoPadding,
+//                            view.getPaddingBottom());
+//                }
+//                else if(j == lineSize - 1)
+//                {
+//                    view.setPadding(view.getPaddingLeft() + autoPadding,
+//                            view.getPaddingTop(),
+//                            view.getPaddingRight(),
+//                            view.getPaddingBottom());
+//                    params.leftMargin += autoPadding * j * 2 ;
+//                }
+//                else
+//                {
+//                    view.setPadding(view.getPaddingLeft() + autoPadding,
+//                            view.getPaddingTop(),
+//                            view.getPaddingRight() + autoPadding,
+//                            view.getPaddingBottom());
+//                    params.leftMargin += autoPadding * j * 2;
+//                }
+                addView(view);
+            }
+        }
+        else
+        {
+            for(int j = 0; j < lineSize; j++)
+            {
+                view = list.get(j);
+                addView(view);
+            }
+        }
+
     }
 
     public interface OnItemClickedListener
