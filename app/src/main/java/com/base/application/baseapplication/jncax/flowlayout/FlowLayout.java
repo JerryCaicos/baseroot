@@ -19,6 +19,10 @@ import java.util.List;
 
 public class FlowLayout extends RelativeLayout
 {
+    public static final int GRAVITY_CENTER = 0;
+
+    public static final int GRAVITY_SIDES = 1;
+
     private Context mContext;
 
     private int maxLine = 99;
@@ -36,6 +40,8 @@ public class FlowLayout extends RelativeLayout
     private boolean autoMatchLayout;
 
     private int currentLine = 0;
+
+    private int layoutGravity;
 
     private FlowLayoutAdapter adapter;
 
@@ -67,6 +73,7 @@ public class FlowLayout extends RelativeLayout
         autoMatchLayout = typedArray.getBoolean(R.styleable.FlowLayout_autoMatchLayout, false);
         paddingLeft = typedArray.getDimensionPixelSize(R.styleable.FlowLayout_paddingLeft, 0);
         paddingRight = typedArray.getDimensionPixelSize(R.styleable.FlowLayout_paddingRight, 0);
+        layoutGravity = typedArray.getInt(R.styleable.FlowLayout_layoutGravity, 0);
     }
 
     public void setMaxLine(int maxLine)
@@ -229,13 +236,27 @@ public class FlowLayout extends RelativeLayout
             View lastView = list.get(lineSize - 1);
             RelativeLayout.LayoutParams lastParam = (LayoutParams) lastView.getLayoutParams();
             autoPadding = measureWidth - lastView.getMeasuredWidth() - lastParam.leftMargin - paddingLeft;
-            if(lineSize != 1)
+            if(layoutGravity == GRAVITY_CENTER)
             {
-                autoPadding = autoPadding / (lineSize * 2);
+                if(lineSize != 1)
+                {
+                    autoPadding = autoPadding / (lineSize * 2);
+                }
+                else
+                {
+                    autoPadding = autoPadding / 2;
+                }
             }
             else
             {
-                autoPadding = autoPadding / 2;
+                if(lineSize != 1)
+                {
+                    autoPadding = autoPadding / (lineSize * 2 - 2);
+                }
+                else
+                {
+                    autoPadding = autoPadding / 2;
+                }
             }
             int offset = 0;
             for(int j = 0; j < lineSize; j++)
@@ -243,36 +264,45 @@ public class FlowLayout extends RelativeLayout
                 view = list.get(j);
 
                 RelativeLayout.LayoutParams params = (LayoutParams) view.getLayoutParams();
-
-                view.setPadding(view.getPaddingLeft() + autoPadding,
-                        view.getPaddingTop(),
-                        view.getPaddingRight() + autoPadding,
-                        view.getPaddingBottom());
-                params.leftMargin += offset;
-                offset = (j + 1)* 2 * autoPadding;
-//                if(j == 0)
-//                {
-//                    view.setPadding(view.getPaddingLeft(),
-//                            view.getPaddingTop(),
-//                            view.getPaddingRight() + autoPadding,
-//                            view.getPaddingBottom());
-//                }
-//                else if(j == lineSize - 1)
-//                {
-//                    view.setPadding(view.getPaddingLeft() + autoPadding,
-//                            view.getPaddingTop(),
-//                            view.getPaddingRight(),
-//                            view.getPaddingBottom());
-//                    params.leftMargin += autoPadding * j * 2 ;
-//                }
-//                else
-//                {
-//                    view.setPadding(view.getPaddingLeft() + autoPadding,
-//                            view.getPaddingTop(),
-//                            view.getPaddingRight() + autoPadding,
-//                            view.getPaddingBottom());
-//                    params.leftMargin += autoPadding * j * 2;
-//                }
+                if(layoutGravity == GRAVITY_CENTER)
+                {
+                    view.setPadding(view.getPaddingLeft() + autoPadding,
+                            view.getPaddingTop(),
+                            view.getPaddingRight() + autoPadding,
+                            view.getPaddingBottom());
+                    params.leftMargin += offset;
+                    offset = (j + 1) * 2 * autoPadding;
+                }
+                else
+                {
+                    if(j == 0)
+                    {
+                        view.setPadding(view.getPaddingLeft(),
+                                view.getPaddingTop(),
+                                view.getPaddingRight() + autoPadding,
+                                view.getPaddingBottom());
+                        offset = autoPadding;
+                    }
+                    else if(j == lineSize - 1)
+                    {
+                        view.setPadding(view.getPaddingLeft() + autoPadding,
+                                view.getPaddingTop(),
+                                view.getPaddingRight(),
+                                view.getPaddingBottom());
+                        //                    params.leftMargin += autoPadding * j * 2 ;
+                        params.leftMargin += offset;
+                    }
+                    else
+                    {
+                        view.setPadding(view.getPaddingLeft() + autoPadding,
+                                view.getPaddingTop(),
+                                view.getPaddingRight() + autoPadding,
+                                view.getPaddingBottom());
+                        //                    params.leftMargin += autoPadding * j * 2;
+                        params.leftMargin += offset;
+                        offset = (j * 2 + 1) * autoPadding;
+                    }
+                }
                 addView(view);
             }
         }
