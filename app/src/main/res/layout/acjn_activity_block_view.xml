@@ -26,10 +26,11 @@
         android:background="@color/act_myebuy_red"
         android:paddingBottom="15dip"
         android:paddingTop="15dip"
-        app:layoutGravity="center"
         app:autoMatchLayout="true"
         app:horizontalSpac="10dip"
-        app:maxLine="2"
+        app:layoutGravity="center"
+        app:maxLine="99"
+        app:defaultLine="38"
         app:verticalSpac="10dip"/>
 
 </LinearLayout>

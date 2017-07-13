@@ -7,11 +7,13 @@
 
     <declare-styleable name="FlowLayout">
         <attr name="maxLine" format="integer"/>
+        <attr name="defaultLine" format="integer"/>
         <attr name="horizontalSpac" format="dimension|reference"/>
         <attr name="verticalSpac" format="dimension|reference"/>
         <attr name="autoMatchLayout" format="boolean"/>
         <attr name="paddingLeft" format="dimension|reference"/>
         <attr name="paddingRight" format="dimension|reference"/>
+        <attr name="flowMoreIcon" format="reference"/>
         <attr name="layoutGravity">
             <enum name="center" value="0"/>
             <enum name="twoSides" value="1"/>

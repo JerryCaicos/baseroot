@@ -2,6 +2,7 @@ package com.base.application.baseapplication.jncax.flowlayout;
 
 import android.content.Context;
 import android.content.res.TypedArray;
+import android.graphics.drawable.Drawable;
 import android.util.AttributeSet;
 import android.util.SparseArray;
 import android.view.View;
@@ -23,9 +24,15 @@ public class FlowLayout extends RelativeLayout
 
     public static final int GRAVITY_SIDES = 1;
 
+    public static final int DEFAULT_LINE = 99;
+
+    public static final int DEFAULT_MAX_LINE = 99;
+
     private Context mContext;
 
-    private int maxLine = 99;
+    private int maxLine;
+
+    private int defaultLine;
 
     private int horizontalSpac;
 
@@ -43,15 +50,19 @@ public class FlowLayout extends RelativeLayout
 
     private int layoutGravity;
 
+    private boolean showWithDefault = false;
+
+    private Drawable flowMoreIcon;
+
     private FlowLayoutAdapter adapter;
 
     private OnItemClickedListener clickedListener;
 
     private OnItemLongClickedListener longClickedListener;
 
-    private SparseArray<List<View>> sparseArray;
+    private SparseArray<List<View>> defaultList;
 
-    //    private List<View> itemList;
+    private SparseArray<List<View>> maxList;
 
     public FlowLayout(Context context, AttributeSet attrs)
     {
@@ -65,15 +76,30 @@ public class FlowLayout extends RelativeLayout
         int defaultHorizontal = DimenUtils.dip2px(context, 20);
         int defaultVertical = DimenUtils.dip2px(context, 10);
 
-        TypedArray typedArray = context.obtainStyledAttributes(attrs, R.styleable.FlowLayout);
+        try
+        {
+            TypedArray typedArray = context.obtainStyledAttributes(attrs, R.styleable.FlowLayout);
 
-        maxLine = typedArray.getInt(R.styleable.FlowLayout_maxLine, Integer.MAX_VALUE);
-        horizontalSpac = typedArray.getDimensionPixelSize(R.styleable.FlowLayout_horizontalSpac, defaultHorizontal);
-        verticalSpac = typedArray.getDimensionPixelSize(R.styleable.FlowLayout_verticalSpac, defaultVertical);
-        autoMatchLayout = typedArray.getBoolean(R.styleable.FlowLayout_autoMatchLayout, false);
-        paddingLeft = typedArray.getDimensionPixelSize(R.styleable.FlowLayout_paddingLeft, 0);
-        paddingRight = typedArray.getDimensionPixelSize(R.styleable.FlowLayout_paddingRight, 0);
-        layoutGravity = typedArray.getInt(R.styleable.FlowLayout_layoutGravity, 0);
+            maxLine = typedArray.getInt(R.styleable.FlowLayout_maxLine, DEFAULT_MAX_LINE);
+            defaultLine = typedArray.getInt(R.styleable.FlowLayout_defaultLine, DEFAULT_LINE);
+            horizontalSpac = typedArray.getDimensionPixelSize(R.styleable.FlowLayout_horizontalSpac, defaultHorizontal);
+            verticalSpac = typedArray.getDimensionPixelSize(R.styleable.FlowLayout_verticalSpac, defaultVertical);
+            autoMatchLayout = typedArray.getBoolean(R.styleable.FlowLayout_autoMatchLayout, false);
+            paddingLeft = typedArray.getDimensionPixelSize(R.styleable.FlowLayout_paddingLeft, 0);
+            paddingRight = typedArray.getDimensionPixelSize(R.styleable.FlowLayout_paddingRight, 0);
+            layoutGravity = typedArray.getInt(R.styleable.FlowLayout_layoutGravity, 0);
+            flowMoreIcon = typedArray.getDrawable(R.styleable.FlowLayout_flowMoreIcon);
+
+            typedArray.recycle();
+        }
+        catch(Exception e)
+        {
+        }
+    }
+
+    public void setDefaultLine(int defaultLine)
+    {
+        this.defaultLine = defaultLine;
     }
 
     public void setMaxLine(int maxLine)
@@ -101,6 +127,26 @@ public class FlowLayout extends RelativeLayout
         this.longClickedListener = longClickedListener;
     }
 
+    public void setPaddingLeft(int paddingLeft)
+    {
+        this.paddingLeft = paddingLeft;
+    }
+
+    public void setPaddingRight(int paddingRight)
+    {
+        this.paddingRight = paddingRight;
+    }
+
+    public void setAutoMatchLayout(boolean autoMatchLayout)
+    {
+        this.autoMatchLayout = autoMatchLayout;
+    }
+
+    public void setLayoutGravity(int layoutGravity)
+    {
+        this.layoutGravity = layoutGravity;
+    }
+
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec)
     {
@@ -112,10 +158,6 @@ public class FlowLayout extends RelativeLayout
     {
         removeAllViews();
         this.adapter = adapter;
-        //        if(itemList == null)
-        //        {
-        //            itemList = new ArrayList<>();
-        //        }
         initSparseArray();
         measureLayout();
         addItems();
@@ -124,8 +166,8 @@ public class FlowLayout extends RelativeLayout
     private void initSparseArray()
     {
         currentLine = 0;
-        sparseArray = new SparseArray<List<View>>();
-        sparseArray.put(currentLine, new ArrayList<View>());
+        maxList = new SparseArray<List<View>>();
+        maxList.put(currentLine, new ArrayList<View>());
     }
 
     private void measureLayout()
@@ -186,7 +228,7 @@ public class FlowLayout extends RelativeLayout
                 lineWidth += itemWidth + horizontalSpac;
 
                 currentLine++;
-                sparseArray.put(currentLine, new ArrayList<View>());
+                maxList.put(currentLine, new ArrayList<View>());
             }
             else
             {
@@ -197,27 +239,52 @@ public class FlowLayout extends RelativeLayout
             }
 
             itemView.setLayoutParams(params);
+            maxList.get(currentLine).add(itemView);
 
-            //            itemList.add(itemView);
-            sparseArray.get(currentLine).add(itemView);
+            if(currentLine >= maxLine)
+            {
+                maxList.remove(currentLine);
+                currentLine -= 1;
+                break;
+            }
+        }
 
+        getDefaultList();
+    }
+
+    private void getDefaultList()
+    {
+        int length = maxList.size();
+        if(defaultLine < length
+                && defaultLine != DEFAULT_LINE
+                && defaultLine != maxLine
+                && defaultLine < maxLine)
+        {
+            defaultList = new SparseArray<>();
+            defaultList = maxList.clone();
+            showWithDefault = true;
+            for(int i = defaultLine; i < length; i++)
+            {
+                defaultList.remove(i);
+            }
         }
     }
 
     private void addItems()
     {
-        //        if(itemList == null || itemList.size() <= 0)
-        //        {
-        //            return;
-        //        }
-        //        for(View view : itemList)
-        //        {
-        //            addView(view);
-        //        }
-
-        for(int i = 0; i < currentLine + 1; i++)
+        SparseArray<List<View>> tempList = new SparseArray<>();
+        if(showWithDefault)
         {
-            List<View> list = sparseArray.get(i);
+            tempList = defaultList;
+        }
+        else
+        {
+            tempList = maxList;
+        }
+        int length = tempList.size();
+        for(int i = 0; i < length + 1; i++)
+        {
+            List<View> list = tempList.get(i);
             if(list == null)
             {
                 continue;
@@ -289,7 +356,6 @@ public class FlowLayout extends RelativeLayout
                                 view.getPaddingTop(),
                                 view.getPaddingRight(),
                                 view.getPaddingBottom());
-                        //                    params.leftMargin += autoPadding * j * 2 ;
                         params.leftMargin += offset;
                     }
                     else
@@ -298,7 +364,6 @@ public class FlowLayout extends RelativeLayout
                                 view.getPaddingTop(),
                                 view.getPaddingRight() + autoPadding,
                                 view.getPaddingBottom());
-                        //                    params.leftMargin += autoPadding * j * 2;
                         params.leftMargin += offset;
                         offset = (j * 2 + 1) * autoPadding;
                     }
