@@ -210,6 +210,20 @@
                 android:text="TabLayout+nestedscrollview"
                 android:textColor="@color/white"
                 android:textSize="18sp"/>
+            <TextView
+                android:id="@+id/btn_pull_scroll"
+                android:layout_width="match_parent"
+                android:layout_height="36dip"
+                android:layout_marginBottom="8dip"
+                android:layout_marginLeft="12dip"
+                android:layout_marginRight="12dip"
+                android:layout_marginTop="8dip"
+                android:background="@drawable/bg_btn_custom"
+                android:clickable="true"
+                android:gravity="center"
+                android:text="PullScrollView"
+                android:textColor="@color/white"
+                android:textSize="18sp"/>
         </LinearLayout>
     </ScrollView>
 

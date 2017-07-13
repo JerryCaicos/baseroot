@@ -73,6 +73,10 @@
             android:name="com.base.application.baseapplication.jncax.smarttab.FiveActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppThemeTool"/>
+        <activity
+            android:name="com.base.application.baseapplication.jncax.pullscroll.PullSrcollActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppThemeTool"/>
     </application>
 
 </manifest>

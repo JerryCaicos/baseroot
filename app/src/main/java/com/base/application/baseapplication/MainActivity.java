@@ -17,6 +17,7 @@ import com.base.application.baseapplication.jncax.coordinatorlayout.ScrollViewPa
 import com.base.application.baseapplication.jncax.draw.DrawActivity;
 import com.base.application.baseapplication.jncax.expandtable.ExpandTableActivity;
 import com.base.application.baseapplication.jncax.foldingmenu.FoldingActivity;
+import com.base.application.baseapplication.jncax.pullscroll.PullSrcollActivity;
 import com.base.application.baseapplication.jncax.qrcode.QRCodeActivity;
 import com.base.application.baseapplication.jncax.smarttab.FiveActivity;
 import com.base.application.baseapplication.net.message.NameValuePair;
@@ -60,6 +61,8 @@ public class MainActivity extends BasicActivity implements View.OnClickListener
 
     private TextView mBtnNestedScrollView;
 
+    private TextView mBtnPullScroll;
+
     @Override
     public void onCreate(Bundle savedInstanceState)
     {
@@ -84,6 +87,7 @@ public class MainActivity extends BasicActivity implements View.OnClickListener
         mBtnSmartTabLayout = (TextView) findViewById(R.id.btn_smarttablayout);
         mBtnTablayoutViewpager = (TextView) findViewById(R.id.btn_tablayout_with_viewpager);
         mBtnNestedScrollView = (TextView) findViewById(R.id.btn_tablayout_with_nestedscrollview);
+        mBtnPullScroll = (TextView) findViewById(R.id.btn_pull_scroll);
     }
 
     private void setOnclickListener()
@@ -101,6 +105,7 @@ public class MainActivity extends BasicActivity implements View.OnClickListener
         mBtnSmartTabLayout.setOnClickListener(this);
         mBtnTablayoutViewpager.setOnClickListener(this);
         mBtnNestedScrollView.setOnClickListener(this);
+        mBtnPullScroll.setOnClickListener(this);
     }
 
     private void testNetWork()
@@ -204,14 +209,24 @@ public class MainActivity extends BasicActivity implements View.OnClickListener
             case R.id.btn_tablayout_with_nestedscrollview:
                 disposeNestedClickListener();
                 break;
+            case R.id.btn_pull_scroll:
+                disposePullScrollClickListener();
+                break;
         }
-//        testNetWork();
+        //        testNetWork();
     }
 
     private void dispose3D2AnimationClickListener()
     {
         Intent intent = new Intent();
         intent.setClass(this, Animation3DActivity2.class);
+        startActivity(intent);
+    }
+
+    private void disposePullScrollClickListener()
+    {
+        Intent intent = new Intent();
+        intent.setClass(this, PullSrcollActivity.class);
         startActivity(intent);
     }
 

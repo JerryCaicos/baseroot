@@ -268,6 +268,8 @@ public class FlowLayout extends RelativeLayout
                 defaultList.remove(i);
             }
         }
+
+        // TODO: 2017/7/13 显示默认行时，最后一个图标显示什么样式，点击后什么操作
     }
 
     private void addItems()
