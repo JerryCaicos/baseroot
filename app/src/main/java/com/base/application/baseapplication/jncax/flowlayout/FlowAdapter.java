@@ -9,7 +9,7 @@ import android.widget.TextView;
 import com.base.application.baseapplication.R;
 
 /**
- * Created by chenaxing on 2017/7/12.
+ * Created by JerryCaicos on 2017/7/12.
  */
 
 public class FlowAdapter extends FlowLayoutAdapter

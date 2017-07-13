@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical">
+
+    <com.base.application.baseapplication.jncax.pullscroll.PullScrollView
+        android:id="@+id/pull_scroll"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:scaleType="fitXY"
+                android:src="@drawable/acjn_photo1"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="30dip"
+                android:text="sfdsfsfsfs"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="30dip"
+                android:text="sfdsfsfsfs"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="30dip"
+                android:text="sfdsfsfsfs"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="30dip"
+                android:text="sfdsfsfsfs"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="30dip"
+                android:text="sfdsfsfsfs"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="30dip"
+                android:text="sfdsfsfsfs"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="30dip"
+                android:text="sfdsfsfsfs"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="30dip"
+                android:text="sfdsfsfsfs"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="30dip"
+                android:text="sfdsfsfsfs"/>
+
+
+        </LinearLayout>
+
+    </com.base.application.baseapplication.jncax.pullscroll.PullScrollView>
+
+</LinearLayout>
