@@ -3,7 +3,7 @@ package com.lib.test;
 import org.omg.PortableInterceptor.SYSTEM_EXCEPTION;
 
 /**
- * Created by chenaxing on 2017/8/17.
+ * Created by JerryCaicos on 2017/8/17.
  */
 
 public class MyThread extends Thread
