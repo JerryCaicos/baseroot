@@ -1,7 +1,7 @@
 package com.lib.test;
 
 /**
- * Created by chenaxing on 2017/8/18.
+ * Created by JerryCaicos on 2017/8/18.
  */
 
 public class SleepThread1 extends Thread

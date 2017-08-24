@@ -1,7 +1,7 @@
 package com.lib.test;
 
 /**
- * Created by chenaxing on 2017/8/17.
+ * Created by JerryCaicos on 2017/8/17.
  */
 
 public class IsAliveThread2 extends Thread
