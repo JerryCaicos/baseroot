@@ -6,12 +6,14 @@ import android.view.View;
 import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
 import android.view.animation.AnimationSet;
+import android.view.animation.AnimationUtils;
 import android.view.animation.LinearInterpolator;
 import android.view.animation.RotateAnimation;
 import android.view.animation.ScaleAnimation;
 import android.view.animation.TranslateAnimation;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.PopupWindow;
 
 import com.base.application.baseapplication.R;
 
@@ -147,6 +149,7 @@ public class AnimationActivity extends Activity
 	{
 		public void onClick(View v)
 		{
+
 			AnimationSet animationSet = new AnimationSet(true);
 			//参数1：x轴的初始值
 			//参数2：x轴收缩后的值
@@ -158,12 +161,54 @@ public class AnimationActivity extends Activity
 			//参数8：y轴的值，0.5f表明是以自身这个控件的一半长度为x轴
 			/**参数6，参数8确定动画开始时的位置，（0.0f，0.0f）表示左上角，（1.0f，1.0f）表示右下角 **/
 			ScaleAnimation scaleAnimation = new ScaleAnimation(
-					0,1.0f,0,1.0f,
+					1.0f,0f,1.0f,0.2f,
 					Animation.RELATIVE_TO_SELF,1.0f,
 					Animation.RELATIVE_TO_SELF,1.0f);
 			scaleAnimation.setDuration(1000);
+			Animation  animation = AnimationUtils.loadAnimation(getApplication(),R.anim.acjn_animation_scale);
 			animationSet.addAnimation(scaleAnimation);
-			image.startAnimation(animationSet);
+//			image.startAnimation(animation);
+			startPopScaleAnimation(image);
+		}
+
+		private void startPopScaleAnimation(View view){
+			float yPercent = 360 * 1.0f / getWindow().peekDecorView().getHeight();
+			ScaleAnimation scaleAnimation = new ScaleAnimation(
+					1.0f,0f,1.0f,0f,
+					Animation.RELATIVE_TO_SELF,1.0f,
+					Animation.RELATIVE_TO_SELF,yPercent);
+			scaleAnimation.setDuration(1000);
+			scaleAnimation.setAnimationListener(new Animation.AnimationListener()
+			{
+				@Override
+				public void onAnimationStart(Animation animation)
+				{
+
+				}
+
+				@Override
+				public void onAnimationEnd(Animation animation)
+				{
+				}
+
+				@Override
+				public void onAnimationRepeat(Animation animation)
+				{
+
+				}
+			});
+
+			TranslateAnimation translateAnimation =
+					new TranslateAnimation(
+							Animation.RELATIVE_TO_SELF,0f,
+							Animation.RELATIVE_TO_SELF,0f,
+							Animation.RELATIVE_TO_SELF,0f,
+							Animation.RELATIVE_TO_SELF,yPercent);
+			translateAnimation.setDuration(1000);
+			AnimationSet animationSet = new AnimationSet(true);
+			animationSet.addAnimation(translateAnimation);
+			animationSet.addAnimation(scaleAnimation);
+			view.startAnimation(animationSet);
 		}
 	}
 
