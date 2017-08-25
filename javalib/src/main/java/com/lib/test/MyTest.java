@@ -1,5 +1,8 @@
 package com.lib.test;
 
+import java.util.Calendar;
+import java.util.TimeZone;
+
 public class MyTest
 {
     public static void main(String[] strings)
@@ -10,7 +13,19 @@ public class MyTest
 //        testCurrentThread();
 //        testThreadIsAlive();
 //        testThreadIsAlive2();
-        testSleepThread();
+//        testSleepThread();
+        System.out.println("time = " + getTimesMorning());
+        System.out.println("time = " + System.currentTimeMillis());
+    }
+
+    private static long getTimesMorning(){
+        Calendar cal = Calendar.getInstance();
+        cal.setTimeZone(TimeZone.getTimeZone("GMT+8:00"));
+        cal.set(Calendar.HOUR_OF_DAY, 0);
+        cal.set(Calendar.SECOND, 0);
+        cal.set(Calendar.MINUTE, 0);
+        cal.set(Calendar.MILLISECOND, 0);
+        return cal.getTimeInMillis();
     }
 
     /**<p>停止一个线程意味着在线程处理完任务之前停掉正在做的操作，也就是放弃当前的操作。虽然看起来简单，但是必须做好
