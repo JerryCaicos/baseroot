@@ -17,6 +17,7 @@ public class MyTest
 //        System.out.println("time = " + getTimesMorning());
 //        System.out.println("time = " + System.currentTimeMillis());
 //        testInterruptThread();
+
         testInterruptState();
     }
 
