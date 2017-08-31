@@ -14,8 +14,81 @@ public class MyTest
 //        testThreadIsAlive();
 //        testThreadIsAlive2();
 //        testSleepThread();
-        System.out.println("time = " + getTimesMorning());
-        System.out.println("time = " + System.currentTimeMillis());
+//        System.out.println("time = " + getTimesMorning());
+//        System.out.println("time = " + System.currentTimeMillis());
+//        testInterruptThread();
+        testInterruptState();
+    }
+
+    /**如果判断一个线程的状态是不是停止的，在Java的jdk中提供了两种方法：1、this.interrupted()，测试当前线程是否已经中断，
+     * 当前线程是指运行 this.interrupted() 的线程。
+     * 2、this.isInterrupted()，测试线程是否已经中断。**/
+    /** 停止一个线程：在sleep() 时停止线程，先sleep再interrupt，会进入catch语句，并清除停止状态，使之变成false。
+     * 也要注意先interrupt再sleep**/
+    private static void testInterruptState()
+    {
+        try
+        {
+            InterrputThread thread = new InterrputThread();
+            thread.start();
+            Thread.sleep(1604);
+            /**调用 thread.interrupt() ，查看interrupted()方法的内部实现，发现它是static的，return currentThread().isInterrupted(true);
+             * 返回的是 currentThread()是否已经中断，而currentThread()是main，所以main线程一直未停止过。**/
+            thread.interrupt();
+            /**调用Thread.currentThread().interrupt();时，注意两个Boolean值，第一个为true，第二个为false，
+             * 出现这种情况是因为 interrupted() 测试当前线程是否已经中断，该方法会将线程的中断状态清除。换句话说，就是
+             * 如果连续两次调用该方法，则第二次将返回false，因为第一次清除了状态（在第一次清除了其中断的状态之后，且第二次
+             * 调用校验完中断状态前，当前线程再次中断的情况除外。）。
+             * 而在调用isInterrupted()方法测试状态时，不会清除当前的中断状态。**/
+//            Thread.currentThread().interrupt();
+//            System.out.println("thread is interrupted 1 : " + Thread.interrupted());
+//            System.out.println("thread is interrupted 2 : " + Thread.interrupted());
+            /****/
+            System.out.println("thread is interrupted 3 : " + thread.isInterrupted());
+            System.out.println("thread is interrupted 4 : " + thread.isInterrupted());
+
+            /**总结：
+             * 1、this.interrupted() ： 判断当前线程是否是中断状态，执行后具有将状态标识清除的功能。
+             * 2、this.inInterrupted() ：测试线程Thread对象是否是中断状态，但不清除状态标识。**/
+        }
+        catch(InterruptedException e)
+        {
+            e.printStackTrace();
+        }
+    }
+
+    /**interrupt() 方法的使用效果并不像 for+break 语句那样，马上就停止循环，调用 interrupt() 方法仅仅是在当前
+     * 线程中打了一个停止的标记，并不是真正的停止线程。**/
+    private static void testInterruptThread()
+    {
+        try
+        {
+            InterrputThread thread = new InterrputThread();
+            thread.start();
+            Thread.sleep(10);
+            thread.interrupt();
+            /**从示例结果可以看出，虽然调用了interrput()方法，但是线程并没有中止，而是一直执行结束。**/
+        }
+        catch(InterruptedException e)
+        {
+            e.printStackTrace();
+        }
+    }
+
+    /**<p>停止一个线程意味着在线程处理完任务之前停掉正在做的操作，也就是放弃当前的操作。虽然看起来简单，但是必须做好
+     * 防范措施，以便达到预期的效果。停止一个线程可以使用Thread.stop()方法，但是这个方法已经废弃，后期可能会不支持
+     * 或者不可用，而且它是不安全的。</p>
+     * <p/>
+     * <p>大多数停止一个线程的操作是使用Thread.interrupt()方法，尽管方法名称是“停止、中止” 的意思，但这个方法
+     * 不会停止一个正在运行的线程，还需要加入一个判断才能完成线程的中止。</p>
+     * <p/>
+     * <p>在Java中有以下3种方法可以停止一个线程：
+     * 1、使用退出标志，使线程正常退出，也就是run()方法完成后停止。
+     * 2、使用stop()方法进行中止，但是不推荐使用这个方法，因为stop(),suspend(),resume()方法都是过期作废的
+     * 3、使用interrupt()方法中断线程。</p>**/
+    private static void testStopThread()
+    {
+
     }
 
     private static long getTimesMorning(){
@@ -26,21 +99,6 @@ public class MyTest
         cal.set(Calendar.MINUTE, 0);
         cal.set(Calendar.MILLISECOND, 0);
         return cal.getTimeInMillis();
-    }
-
-    /**<p>停止一个线程意味着在线程处理完任务之前停掉正在做的操作，也就是放弃当前的操作。虽然看起来简单，但是必须做好
-     * 防范措施，以便达到预期的效果。停止一个线程可以使用Thread.stop()方法，但是这个方法已经废弃，后期可能会不支持
-     * 或者不可用，而且它是不安全的。</p>
-     * <p/>
-     * <p>大多数停止一个线程的操作是使用Thread.interrupt()方法，尽管方法名称是“停止、中止” 的意思，但这个方法
-     * 不会停止一个正在运行的线程，还需要加入一个判断才能完成线程的中止。</p>
-     * <p/>
-     * <p>在Java中有以下3种方法可以停止一个线程：1、使用退出标志，使线程正常退出，也就是run()方法完成后停止。
-     * 2、使用stop()方法进行中止，但是不推荐使用这个方法，因为stop(),suspend(),resume()方法都是过期作废的
-     * 3、使用interrupt()方法中断线程。</p>**/
-    private static void testStopThread()
-    {
-
     }
 
     /**sleep() 方法的作用是在指定的毫秒时间内让当前的 “正在执行的线程” 休眠（暂停执行），
