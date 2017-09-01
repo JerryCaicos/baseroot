@@ -19,6 +19,25 @@ public class MyTest
 //        testInterruptThread();
 
         testInterruptState();
+//        testReturnInterruptThread();
+    }
+
+    /**<p>
+     * 将方法 interrupt() 与 return 结合使用，也能实现停止线程的效果。
+     * <p/>**/
+    private static void testReturnInterruptThread()
+    {
+        try
+        {
+            ReturnInterruptThread thread = new ReturnInterruptThread();
+            thread.start();
+            Thread.sleep(2000);
+            thread.interrupt();
+        }
+        catch(InterruptedException e)
+        {
+            e.printStackTrace();
+        }
     }
 
     /**如果判断一个线程的状态是不是停止的，在Java的jdk中提供了两种方法：1、this.interrupted()，测试当前线程是否已经中断，
@@ -32,7 +51,7 @@ public class MyTest
         {
             InterrputThread thread = new InterrputThread();
             thread.start();
-            Thread.sleep(1604);
+            Thread.sleep(2000);
             /**调用 thread.interrupt() ，查看interrupted()方法的内部实现，发现它是static的，return currentThread().isInterrupted(true);
              * 返回的是 currentThread()是否已经中断，而currentThread()是main，所以main线程一直未停止过。**/
             thread.interrupt();
@@ -42,11 +61,11 @@ public class MyTest
              * 调用校验完中断状态前，当前线程再次中断的情况除外。）。
              * 而在调用isInterrupted()方法测试状态时，不会清除当前的中断状态。**/
 //            Thread.currentThread().interrupt();
-//            System.out.println("thread is interrupted 1 : " + Thread.interrupted());
-//            System.out.println("thread is interrupted 2 : " + Thread.interrupted());
+            System.out.println("thread is interrupted 1 : " + thread.interrupted());
+            System.out.println("thread is interrupted 2 : " + thread.interrupted());
             /****/
-            System.out.println("thread is interrupted 3 : " + thread.isInterrupted());
-            System.out.println("thread is interrupted 4 : " + thread.isInterrupted());
+//            System.out.println("thread is interrupted 3 : " + thread.isInterrupted());
+//            System.out.println("thread is interrupted 4 : " + thread.isInterrupted());
 
             /**总结：
              * 1、this.interrupted() ： 判断当前线程是否是中断状态，执行后具有将状态标识清除的功能。
@@ -76,17 +95,26 @@ public class MyTest
         }
     }
 
-    /**<p>停止一个线程意味着在线程处理完任务之前停掉正在做的操作，也就是放弃当前的操作。虽然看起来简单，但是必须做好
+    /**<p>
+     * 停止一个线程意味着在线程处理完任务之前停掉正在做的操作，也就是放弃当前的操作。虽然看起来简单，但是必须做好
      * 防范措施，以便达到预期的效果。停止一个线程可以使用Thread.stop()方法，但是这个方法已经废弃，后期可能会不支持
-     * 或者不可用，而且它是不安全的。</p>
+     * 或者不可用，而且它是不安全的。
      * <p/>
-     * <p>大多数停止一个线程的操作是使用Thread.interrupt()方法，尽管方法名称是“停止、中止” 的意思，但这个方法
-     * 不会停止一个正在运行的线程，还需要加入一个判断才能完成线程的中止。</p>
+     * <p>
+     * 大多数停止一个线程的操作是使用Thread.interrupt()方法，尽管方法名称是“停止、中止” 的意思，但这个方法
+     * 不会停止一个正在运行的线程，还需要加入一个判断才能完成线程的中止。
      * <p/>
-     * <p>在Java中有以下3种方法可以停止一个线程：
+     * <p>
+     * 在Java中有以下3种方法可以停止一个线程：
      * 1、使用退出标志，使线程正常退出，也就是run()方法完成后停止。
      * 2、使用stop()方法进行中止，但是不推荐使用这个方法，因为stop(),suspend(),resume()方法都是过期作废的
-     * 3、使用interrupt()方法中断线程。</p>**/
+     * 3、使用interrupt()方法中断线程。
+     * </p>
+     * <p>
+     *    调用stop() 方法会抛出java.lang.ThreadDeath异常，但在通常情况下，不需要显示的捕捉该异常。方法stop()
+     *    已经作废，因为如果强制让线程停止，则有可能使一些请理性的工作得不到完成。另外一种情况就是对锁定的对象进行了
+     *    “解锁”，导致数据得不到同步的处理，出现数据不一致的问题。
+     * </p>**/
     private static void testStopThread()
     {
 

@@ -10,6 +10,15 @@ public class InterrputThread extends Thread
     public void run()
     {
         super.run();
+//        while(true)
+//        {
+//            if(this.isInterrupted())
+//            {
+//                System.out.println("Thread is interrupted ! ");
+//                return;
+//            }
+//            System.out.println(System.currentTimeMillis() + "");
+//        }
         try
         {
             for(int i = 0; i < 100000; i++)
