@@ -18,8 +18,72 @@ public class MyTest
 //        System.out.println("time = " + System.currentTimeMillis());
 //        testInterruptThread();
 
-        testInterruptState();
+//        testInterruptState();
 //        testReturnInterruptThread();
+//        testYieldFunc();
+//        testDaemonThread();
+        testString();
+    }
+
+    private static void testString()
+    {
+        StringBuffer param = new StringBuffer();
+        param.append(4334);
+        param.append("_");
+        param.append("sfdsfsf");
+        System.out.println(param.toString());
+    }
+
+
+    /**
+    * <p>
+     *     Java中有两种线程，用户线程 和 守护线程。
+     *     守护线程是一种特殊的线程，它的特性有“陪伴”的含义，当进程中不存在非守护线程了，守护线程会自动销毁。典型的守护线程
+     *     就是 垃圾回收线程。当进程中没有非守护线程了，则垃圾回收线程就没有存在的必要了，自动销毁。
+    * </p>**/
+    private static void testDaemonThread()
+    {
+        try
+        {
+            DaemonThread thread = new DaemonThread();
+            thread.setDaemon(true);
+            thread.start();
+            Thread.sleep(5000);
+            System.out.println("if I leave, thread will not print any thing, it's stop");
+        }
+        catch(InterruptedException e)
+        {
+            e.printStackTrace();
+        }
+    }
+
+    /**
+     * <p>
+     *     线程优先级：在操作系统中，线程可以划分优先级。优先级高的线程得到的CPU资源多，也就是CPU优先执行优先级较高的
+     *     线程对象中的任务。设置线程的优先级可以使用 setPriority() 方法。在Java中，线程的优先级分为 1~10 。如果
+     *     优先级 < 1 或者 > 10 ,jdk会抛出异常：throw new IllegalArgumentException()。</>
+     * </p>
+     * <p>
+     *     线程优先级具有继承性。比如 A 线程启动了 B 线程，那么 B 线程的优先级和 A　线程的优先级是相同的。
+     *     高优先级的线程总是大部分先执行完，但不代表高优先级的线程全部先执行完毕。当线程的优先级相差很大时，谁先执行完
+     *     和代码的调用顺序无关。这说明线程的优先级具有规则性，也就是CPU尽量将资源让给优先级高的线程。
+     * </p>
+     *
+     * <p>
+     *     前面说，线程的优先级高则优先执行完run方法中的任务，但是这个结果不能说的太肯定。因为线程的优先级还具有随机性。
+     *     也就是优先级高的线程不一定每次都先执行完。不要把线程的优先级和运行结果的顺序作为衡量的标准，优先级高是线程不一定
+     *     每次都先执行完run方法中的任务。
+     * </p>**/
+
+    /**
+     * <p>
+     *     yield() 方法的作用是放弃当前的CPU资源，让给其他的任务去占用CPU执行。
+     *     但是放弃的时间不确定，有可能刚刚放弃，马上又重新获得了CPU。
+     * </p>**/
+    public static void testYieldFunc()
+    {
+        YieldThread thread = new YieldThread();
+        thread.start();
     }
 
     /**<p>

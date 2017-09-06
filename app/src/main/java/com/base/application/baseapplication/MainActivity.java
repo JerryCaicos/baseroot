@@ -3,6 +3,7 @@ package com.base.application.baseapplication;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.telephony.TelephonyManager;
 import android.view.View;
 import android.widget.TextView;
 
@@ -26,11 +27,13 @@ import com.base.application.baseapplication.net.model.BasicNetResult;
 import com.base.application.baseapplication.net.model.NetResult;
 import com.base.application.baseapplication.net.task.BasicJsonTask;
 import com.base.application.baseapplication.net.task.BasicNetTask;
+import com.base.application.baseapplication.utils.LogUtils;
 import com.base.application.baseapplication.utils.ToastUtils;
 
 import org.json.JSONObject;
 
 import java.util.List;
+import java.util.Locale;
 
 public class MainActivity extends BasicActivity implements View.OnClickListener
 {
@@ -70,6 +73,7 @@ public class MainActivity extends BasicActivity implements View.OnClickListener
         setContentView(R.layout.acjn_activity_main);
         initView();
         setOnclickListener();
+
     }
 
     private void initView()
@@ -214,6 +218,20 @@ public class MainActivity extends BasicActivity implements View.OnClickListener
                 break;
         }
         //        testNetWork();
+//        LogUtils.e("android.os.Build.MODEL : " + android.os.Build.MODEL);
+//        LogUtils.e("Locale.getDefault().getLanguage() : " + Locale.getDefault().getLanguage());
+//        LogUtils.e("Locale.getAvailableLocales() : " + Locale.getAvailableLocales().length);
+//        LogUtils.e("android.os.Build.VERSION.RELEASE : " +  android.os.Build.VERSION.RELEASE);
+//        LogUtils.e("android.os.Build.BRAND : " + android.os.Build.BRAND);
+//        Locale[] locales = Locale.getAvailableLocales();
+//        int length = locales.length;
+//        for(int i = 0; i < length; i++)
+//        {
+//            LogUtils.e("Locale.getAvailableLocales() " + i + " : " + locales[i]);
+//        }
+//
+//        TelephonyManager tm = (TelephonyManager) getSystemService(Activity.TELEPHONY_SERVICE);
+//        LogUtils.e("tm.getDeviceId() : " + tm.getDeviceId());
     }
 
     private void dispose3D2AnimationClickListener()
