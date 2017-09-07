@@ -1,5 +1,8 @@
 package com.lib.test;
 
+import com.lib.test.dirty_read.DirtyReadObject;
+import com.lib.test.dirty_read.DirtyReadThread;
+
 import java.util.Calendar;
 import java.util.TimeZone;
 
@@ -22,7 +25,49 @@ public class MyTest
 //        testReturnInterruptThread();
 //        testYieldFunc();
 //        testDaemonThread();
-        testString();
+//        testString();
+        testDirtyRead();
+    }
+
+    /**
+     * <p>
+     *     synchronized 同步关键字
+     *     1、两个线程访问同一个对象实例中的同步方法是线程安全的，另外，方法内的变量是线程安全的。
+     *     2、synchronized 关键字取得的锁都是对象锁，而不是一段代码或者一个方法的锁。那个线程先执行synchronized的方法，
+     *     那个线程就持有该方法所属对象的锁，那么其他线程就只能呈现等待状态，前提是多个线程访问的是同一个对象。
+     *     3、如果多个线程访问多个对象，则JVM会创建多个锁。
+     *     4、调用synchronized声明的方法一定是排队执行的。另外，要牢记住“共享”，只有共享资源的读写访问才需要同步处理，
+     *     非共享资源根本没有同步的必要。
+     *     5、A 线程先持有 object对象的Lock锁，B 线程可以异步的调用object对象中非synchronized类型的方法（会出现脏读）。
+     *     6、A 线程先持有 object对象的Lock锁，B 线程如果在此时想要调用object对象的synchronized类型的方法，则需要
+     *     排队等待，也就是同步。
+     * </p>
+     * <p>
+     *     对比getValue()方法没有声明synchronized和声明了synchronized 的结果。
+     *     在getValue()没有被synchronized关键字修饰时，出现了数据脏读。
+     *     1、当A 线程调用object对象的加入了synchronized关键字的 X（方法名） 方法时，A 线程就获得了 X 方法锁，确切的讲，
+     *     是获得了object对象的锁，所以其他线程必须等A 线程执行完才可以调用 X 方法，但是B 线程可以随意调用其他的非synchronized
+     *     同步的 Y 方法，如果X 和Y 方法中有引用相同的变量，这个时候就会出现脏读。
+     *     2、当A 线程调用object对象的加入了synchronized关键字的 X（方法名） 方法时，A 线程就获得了 X 方法锁，确切的讲，
+     *     是获得了object对象的锁，所以其他线程必须等A 线程执行完才可以调用 X 方法，而B 线程如果调用声明了synchronized
+     *     关键字的 Y 方法时，B 线程必须等 A 线程执行完X 方法，才可以调用到 Y 方法，也就是 A 线程释放了object的对象锁
+     *     以后，B 线程才可以调用object 声明了synchronized关键字的 Y 方法。这样可以解决数据脏读的情况。
+     * </p>**/
+
+    public static void testDirtyRead()
+    {
+        try
+        {
+            DirtyReadObject object = new DirtyReadObject();
+            DirtyReadThread thread = new DirtyReadThread(object);
+            thread.start();
+            Thread.sleep(2000);
+            object.getValue();
+        }
+        catch(InterruptedException e)
+        {
+            e.printStackTrace();
+        }
     }
 
     private static void testString()
@@ -33,7 +78,6 @@ public class MyTest
         param.append("sfdsfsf");
         System.out.println(param.toString());
     }
-
 
     /**
     * <p>
