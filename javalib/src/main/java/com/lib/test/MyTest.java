@@ -14,6 +14,9 @@ import com.lib.test.chapter_one.SleepThread2;
 import com.lib.test.chapter_one.YieldThread;
 import com.lib.test.dirty_read.DirtyReadObject;
 import com.lib.test.dirty_read.DirtyReadThread;
+import com.lib.test.synchronized_lock_reload.LockReloadThread;
+import com.lib.test.synchronized_lock_reload.LockReloadThread2;
+import com.lib.test.synchronized_lock_reload.SubLockObject;
 
 import java.util.Calendar;
 import java.util.TimeZone;
@@ -38,7 +41,8 @@ public class MyTest
 //        testYieldFunc();
 //        testDaemonThread();
 //        testString();
-        testDirtyRead();
+//        testDirtyRead();
+        synchronizedLockReload();
     }
 
     /**
@@ -46,10 +50,30 @@ public class MyTest
      *     synchronized 关键字拥有锁重入的功能，也就是在使用synchronized 时，当一个线程得到一个对象锁后，再次请求
      *     此对象锁时是可以再次得到该对象的锁的。这也证明，synchronized 方法/代码块 的内部调用本类的其他的 synchronized
      *     方法/代码块 时，是永远可以得到锁的。
+     * </p>
+     * <p>
+     *     1、可重入锁：可重入锁是自己可以再次获取自己的内部锁。比如有 A 线程获得了一个对象的对象锁，此时这个对象还没有被释放，
+     *     当其想要再次获取这个对象的锁的时候还是可以获取到的，如果不可锁重入的话，会造成死锁。
+     *     2、可重入锁也支持在父子类继承的环境中，子类可以通过可重入锁调用父类的同步方法。
+     *     3、当一个线程执行的代码出现异常时，其所持有的锁会自动释放。
+     *     4、同步synchronized 关键字不具有继承性。即父类synchronized的 X 方法 在子类中 X 方法是非synchronized ，
+     *     除非子类也声明synchronized。
      * </p>**/
     private static void synchronizedLockReload()
     {
-
+        try
+        {
+            SubLockObject object = new SubLockObject();
+            LockReloadThread thread = new LockReloadThread(object);
+            thread.start();
+//            Thread.sleep(2000);
+//            LockReloadThread2 thread2 = new LockReloadThread2(object);
+//            thread2.start();
+        }
+        catch(Exception e)
+        {
+            e.printStackTrace();
+        }
     }
 
     /**
