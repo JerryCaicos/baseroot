@@ -1,5 +1,17 @@
 package com.lib.test;
 
+import com.lib.test.chapter_one.CountThread;
+import com.lib.test.chapter_one.CurrentThread;
+import com.lib.test.chapter_one.DaemonThread;
+import com.lib.test.chapter_one.InterrputThread;
+import com.lib.test.chapter_one.IsAliveThread;
+import com.lib.test.chapter_one.IsAliveThread2;
+import com.lib.test.chapter_one.LoginThread;
+import com.lib.test.chapter_one.MyThread;
+import com.lib.test.chapter_one.ReturnInterruptThread;
+import com.lib.test.chapter_one.SleepThread1;
+import com.lib.test.chapter_one.SleepThread2;
+import com.lib.test.chapter_one.YieldThread;
 import com.lib.test.dirty_read.DirtyReadObject;
 import com.lib.test.dirty_read.DirtyReadThread;
 
@@ -31,6 +43,17 @@ public class MyTest
 
     /**
      * <p>
+     *     synchronized 关键字拥有锁重入的功能，也就是在使用synchronized 时，当一个线程得到一个对象锁后，再次请求
+     *     此对象锁时是可以再次得到该对象的锁的。这也证明，synchronized 方法/代码块 的内部调用本类的其他的 synchronized
+     *     方法/代码块 时，是永远可以得到锁的。
+     * </p>**/
+    private static void synchronizedLockReload()
+    {
+
+    }
+
+    /**
+     * <p>
      *     synchronized 同步关键字
      *     1、两个线程访问同一个对象实例中的同步方法是线程安全的，另外，方法内的变量是线程安全的。
      *     2、synchronized 关键字取得的锁都是对象锁，而不是一段代码或者一个方法的锁。那个线程先执行synchronized的方法，
@@ -54,7 +77,7 @@ public class MyTest
      *     以后，B 线程才可以调用object 声明了synchronized关键字的 Y 方法。这样可以解决数据脏读的情况。
      * </p>**/
 
-    public static void testDirtyRead()
+    private static void testDirtyRead()
     {
         try
         {

@@ -1,4 +1,4 @@
-package com.lib.test;
+package com.lib.test.chapter_one;
 
 /**
  * Created by JerryCaicos on 2017/8/30.

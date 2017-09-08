@@ -1,4 +1,4 @@
-package com.lib.test;
+package com.lib.test.chapter_one;
 
 import org.omg.PortableInterceptor.SYSTEM_EXCEPTION;
 
