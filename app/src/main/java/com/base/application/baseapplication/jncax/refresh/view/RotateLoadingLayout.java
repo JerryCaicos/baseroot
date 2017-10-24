@@ -252,5 +252,6 @@ public class RotateLoadingLayout extends LoadingLayout
 		//            // mRefreshImage.setBackgroundResource(0);
 		//            // }
 		//        }
+
 	}
 }
