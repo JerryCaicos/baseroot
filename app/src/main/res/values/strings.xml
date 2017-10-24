@@ -8,4 +8,20 @@
     
     <string name="acjn_open">打开</string>
     <string name="acjn_close">关闭</string>
+
+    <!-- 下拉刷新和上拉加载更多的文本 -->
+    <string name="pull_to_refresh_header_hint_normal">下拉刷新</string>
+    <string name="pull_to_refresh_header_hint_normal2">上拉加载更多</string>
+    <string name="pull_to_refresh_header_hint_ready">松开刷新</string>
+    <string name="pull_to_refresh_header_hint_loading">正在刷新...</string>
+    <string name="pull_to_refresh_header_last_time">最近更新 : </string>
+    <string name="pull_to_refresh_footer_hint_ready">松开加载更多...</string>
+
+    <!-- Just use standard Pull Down String when pulling up. These can be set for languages which require it -->
+    <string name="pull_to_refresh_from_bottom_pull_label">下拉刷新</string>
+    <string name="pull_to_refresh_from_bottom_release_label">松开刷新</string>
+    <string name="pull_to_refresh_from_bottom_refreshing_label">@string/pull_to_refresh_refreshing_label</string>
+    <string name="pull_to_refresh_refreshing_label">努力加载中…</string>
+    <string name="pushmsg_center_no_more_msg">已经到底啦</string>
+    <string name="pull_to_refresh_no_more_data">@string/pushmsg_center_no_more_msg</string>
 </resources>

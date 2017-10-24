@@ -13,91 +13,91 @@ import com.base.application.baseapplication.jncax.refresh.view.PullToRefreshBase
 public interface IPullToRefresh<T extends View>
 {
 	/**
-	 * 设置下拉刷新是否可用
+	 * 设置当前下拉刷新是否可用
 	 *
-	 * @param pullRefreshEnable true 可用，false 不可用
+	 * @param pullRefreshEnabled true表示可用，false表示不可用
 	 */
-	public void setPullDownRefreshEnable(boolean pullRefreshEnable);
+	public void setPullRefreshEnabled(boolean pullRefreshEnabled);
 
 	/**
-	 * 设置上拉加载更多是否可用
+	 * 设置当前上拉加载更多是否可用
 	 *
-	 * @param upLoadingEnable true 可用，false 不可用
+	 * @param pullLoadEnabled true表示可用，false表示不可用
 	 */
-	public void setPullUpLoadingEnable(boolean upLoadingEnable);
+	public void setPullLoadEnabled(boolean pullLoadEnabled);
 
 	/**
-	 * 设置滑动到底部是否自动加载更多
+	 * 滑动到底部是否自动加载更多数据
 	 *
-	 * @param bottomAutoLoadingEnable true 上拉加载更多禁用
+	 * @param scrollLoadEnabled 如果这个值为true的话，那么上拉加载更多的功能将会禁用
 	 */
-	public void setScrollBottomAutoLoadingEnable(boolean bottomAutoLoadingEnable);
+	public void setScrollLoadEnabled(boolean scrollLoadEnabled);
 
 	/**
 	 * 判断当前下拉刷新是否可用
 	 *
-	 * @return true 可用，false 不可用
+	 * @return true如果可用，false不可用
 	 */
-	public boolean isPullDownRefreshEnable();
+	public boolean isPullRefreshEnabled();
 
 	/**
-	 * 判断当前上拉加载更多是否可用
+	 * 判断上拉加载是否可用
 	 *
-	 * @return true 可用，false 不可用
+	 * @return true可用，false不可用
 	 */
-	public boolean isPullUpLoadingEnable();
+	public boolean isPullLoadEnabled();
 
 	/**
-	 * 判断滑动到底部加载更多是否可用
+	 * 滑动到底部加载是否可用
 	 *
-	 * @return true 可用，false 不可用
+	 * @return true可用，否则不可用
 	 */
-	public boolean isScrollBottomAutoLoadingEnable();
+	public boolean isScrollLoadEnabled();
 
 	/**
 	 * 设置刷新的监听器
 	 *
-	 * @param refreshListener 监听对象
+	 * @param refreshListener 监听器对象
 	 */
 	public void setOnRefreshListener(PullToRefreshBase.OnRefreshListener<T> refreshListener);
 
 	/**
-	 * 下拉刷新完成
+	 * 结束下拉刷新
 	 */
-	public void onPullDownRefreshCompleted();
+	public void onPullDownRefreshComplete();
 
 	/**
-	 * 上拉加载更多完成
+	 * 结束上拉加载更多
 	 */
-	public void onPullUpLoadingCompleted();
+	public void onPullUpRefreshComplete();
 
 	/**
-	 * 得到可刷新的view对象
+	 * 得到可刷新的View对象
 	 *
 	 * @return 返回调用{@link #createRefreshableView(Context, AttributeSet)} 方法返回的对象
 	 */
 	public T getRefreshableView();
 
 	/**
-	 * 获取下拉刷新Header Layout
+	 * 得到Header布局对象
 	 *
-	 * @return Header 布局对象
+	 * @return Header布局对象
 	 */
 	public LoadingLayout getHeaderLoadingLayout();
 
 	/**
-	 * 获取上拉加载更多 Footer Layout
+	 * 得到Footer布局对象
 	 *
-	 * @return Footer 布局对象
+	 * @return Footer布局对象
 	 */
 	public LoadingLayout getFooterLoadingLayout();
 
 	/**
-	 * 设置最近一次跟新的文本
+	 * 设置最后更新的时间文本
 	 *
-	 * @param lastUpdatedLable 最近一次更新的文本
+	 * @param label 文本
 	 */
-	public void setLastUpdatedLable(CharSequence lastUpdatedLable);
+	public void setLastUpdatedLabel(CharSequence label);
 
 
 }
