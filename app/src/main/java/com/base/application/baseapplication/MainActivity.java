@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.telephony.TelephonyManager;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.base.application.baseapplication.jncax.animation.Animation3DActivity;
 import com.base.application.baseapplication.jncax.animation.Animation3DActivity2;
@@ -66,6 +67,18 @@ public class MainActivity extends BasicActivity implements View.OnClickListener
 
     private TextView mBtnPullScroll;
 
+    // Used to load the 'native-lib' library on application startup.
+    static
+    {
+        System.loadLibrary("native-lib");
+    }
+
+    /**
+     * A native method that is implemented by the 'native-lib' native library,
+     * which is packaged with this application.
+     */
+    public static native int maxFromJNI(int a,int b);
+
     @Override
     public void onCreate(Bundle savedInstanceState)
     {
@@ -73,6 +86,7 @@ public class MainActivity extends BasicActivity implements View.OnClickListener
         setContentView(R.layout.acjn_activity_main);
         initView();
         setOnclickListener();
+        ToastUtils.showMessage(maxFromJNI(10,34)+"");
 
     }
 

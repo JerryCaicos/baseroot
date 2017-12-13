@@ -11,6 +11,12 @@ android {
         versionCode 1
         versionName "1.0"
         multiDexEnabled true
+
+        externalNativeBuild {
+            cmake {
+                cppFlags ""
+            }
+        }
     }
     buildTypes {
 //        debug {
@@ -33,7 +39,18 @@ android {
 //            // 移除无用的resource文件
 //            //shrinkResources true
 //        }
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
     }
+
+    externalNativeBuild {
+        cmake {
+            path "CMakeLists.txt"
+        }
+    }
+
     dexOptions {
         javaMaxHeapSize '2g'
         jumboMode = true
