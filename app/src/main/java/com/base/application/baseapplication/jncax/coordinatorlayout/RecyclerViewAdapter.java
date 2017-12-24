@@ -5,9 +5,11 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.base.application.baseapplication.R;
+import com.base.application.baseapplication.utils.DimenUtils;
 
 import java.util.List;
 
@@ -48,6 +50,11 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<ViewHolder>
 	@Override
 	public void onBindViewHolder(ViewHolder holder,int position)
 	{
+		if(position == 1){
+			holder.textView.setBackgroundColor(mContext.getResources().getColor(R.color.red_ball));
+		}
+		float width = (DimenUtils.getResolution(mContext)[0] - DimenUtils.dip2px(mContext,5)) / 2;
+		holder.textView.getLayoutParams().width = (int) width;
 		holder.textView.setText(list.get(position));
 	}
 
@@ -60,11 +67,13 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<ViewHolder>
 
 class ViewHolder extends RecyclerView.ViewHolder
 {
+	public LinearLayout container;
 	public TextView textView;
 
 	public ViewHolder(View itemView)
 	{
 		super(itemView);
+		container = (LinearLayout)itemView.findViewById(R.id.item_view_container);
 		textView = (TextView)itemView.findViewById(R.id.item_view);
 	}
 }
