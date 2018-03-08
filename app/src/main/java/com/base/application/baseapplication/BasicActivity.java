@@ -187,7 +187,6 @@ public class BasicActivity extends AppCompatActivity
 	 * 卫星菜单创建的时候,重写这个方法可设置卫星菜单<BR>
 	 * 必须添加的卫星按钮之后,这个方法才会被调用.
 	 *
-	 * @param menu 卫星菜单
 	 * @Author 12075179
 	 * @Date 2015-9-21
 	 */
@@ -676,6 +675,7 @@ public class BasicActivity extends AppCompatActivity
 	protected void onDestroy()
 	{
 		super.onDestroy();
+		((BasicApplication)getApplication()).exit();
 	}
 
 	@Override
